@@ -44,23 +44,43 @@
 
   <div class="p-grid backgroundloader ">
 
-    <div class="flex flex-wrap w-100 p-col-12 justify-content-between p-mt-5" >
+    <div class="flex flex-wrap w-100 p-col-12 justify-content-between p-mt-5">
       <div class="flex align-items-center justify-content-center font-bold m-2 border-round"
         style="min-width: 150px; min-height: 100px">
-       <div class="about">
-        <h1>Hi There,</h1>
-        <h2> I'm Neeraj Gupta</h2>
-        <h3>i am <span class="typing-text">{{title}}</span></h3>
-        <h3>I am <span class="typing-text">{{ currentString }}</span></h3>
-        <p-button label="Search" icon="pi pi-check" [loading]="loading" (onClick)="load()" />
-       </div>
+        <div class="about">
+          <h1>Hi There,</h1>
+          <h2> I'm Neeraj Gupta</h2>
+          <h3>I am <span class="typing-text">{{title}}</span></h3>
+          <!-- <h3>I am <span class="typing-text">{{ currentString }}</span></h3> -->
+          <p-button label="About Me"  routerLink="/about"  [loading]="loading" (onClick)="load()">
+            <img draggable="false" class="tilt" src="./assets/images/Neeraj-Profile.png" alt="" style="
+          height: 40px;
+          width: 40px;
+          border: 1px solid red;
+          border-radius: 50%;
+          margin: 5px;"></p-button>
+
+          <div class="socalmedia ">
+            <p-button icon="pi pi-whatsapp"  (click)="navigateToAbout()"/>
+            <p-button icon="pi pi-instagram"  (onClick)="scrollToSection('about')"/>
+            <p-button icon="pi pi-github" ></p-button>
+
+            <p-button icon="pi pi-telegram" />
+            <p-button icon="pi pi-linkedin" />
+            <p-button icon="fab fa-twitter" />
+            <!-- <a  class="pi pi-instagram" href="#about"> </a>
+            <a  class="pi pi-instagram" href="#home"> </a> -->
+          </div>
+        </div>
+
+
       </div>
 
       <div class="rightimg">
         <img draggable="false" class="tilt" src="./assets/images/Neeraj-Profile.png" alt="">
       </div>
-
     </div>
+
   </div>
 </section>
 
@@ -80,3 +100,4 @@
 
           </ul>
         </div> -->
+        <!-- <app-about id="about"></app-about> -->

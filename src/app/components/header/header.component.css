@@ -83,38 +83,3 @@ body {
 }
 
 
-#home {
-  margin-top: 60px;
-  background-color: #f1eeee;
-  height: 800px;
-  position: relative;
-  .about{
-    margin-left: 50px;
-    h2{
-      margin-left: 60px;
-    }
-    h3{
-      margin-left: 70px;
-    }
-  }
-
-  .rightimg{
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    border: 1px solid black;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    margin-right: 180px;
-    img{
-      border: 1px solid black;
-      height: 300px;
-      width: 300px;
-      border-radius: 50%;
-
-    }
-   
-  }
-
-}
