@@ -1,5 +1,5 @@
 * {
-  margin: 0px;
+  margin-top: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
@@ -17,7 +17,7 @@ body {
   position: relative;
   width: 300px;
   height: 300px;
-  margin-left: 100px;
+  /* margin-left: 100px; */
 
 }
 
@@ -86,23 +86,35 @@ body {
 #home {
   margin-top: 60px;
   background-color: #f1eeee;
-  height: 500px;
+  height: 800px;
   position: relative;
-
-  .backgroundloader {
-    z-index: 5;
-    position: absolute;
-    width: 100%;
-    top: 100px;
-
-    .image {
-      img{
-        height: 87%;
-        width: 60%;
-        border: 1px solid black;
-        border-radius: 50%;
-      }
-
+  .about{
+    margin-left: 50px;
+    h2{
+      margin-left: 60px;
+    }
+    h3{
+      margin-left: 70px;
     }
   }
+
+  .rightimg{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin-right: 180px;
+    img{
+      border: 1px solid black;
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+
+    }
+   
+  }
+
 }

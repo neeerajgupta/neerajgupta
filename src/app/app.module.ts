@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { MenubarModule } from 'primeng/menubar';
 
 
 
@@ -16,9 +17,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     BrowserModule,
     CommonModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    MenubarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
