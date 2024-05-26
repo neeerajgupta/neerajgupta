@@ -7,6 +7,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { AboutComponent } from "./components/about/about.component";
+import { TourComponent } from "./components/tour/tour.component";
+
 
 
 @Component({
@@ -14,7 +16,7 @@ import { AboutComponent } from "./components/about/about.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, AvatarModule, AvatarGroupModule, MenubarModule, AboutComponent]
+    imports: [CommonModule, RouterOutlet, AvatarModule, AvatarGroupModule, MenubarModule, AboutComponent, TourComponent]
 })
 export class AppComponent {
   title = 'neerajgupta';
@@ -31,7 +33,7 @@ export class AppComponent {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        id:'about'
+        // id:'home'
       },
       {
         label: 'About',
