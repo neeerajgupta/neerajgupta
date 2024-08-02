@@ -33,15 +33,17 @@ export class AppComponent {
       {
         label: 'Home',
         icon: 'pi pi-home',
-        // id:'home'
+        route: '/'
       },
       {
         label: 'About',
         icon: 'pi pi-star',
+        route: '/about'
       },
       {
         label: 'Projects',
         icon: 'pi pi-search',
+        route: '/tour',
         items: [
           {
             label: 'Smart',
@@ -73,15 +75,18 @@ export class AppComponent {
       },
       {
         label: 'Skills',
-        icon: 'pi pi-spin pi-cog'
+        icon: 'pi pi-spin pi-cog',
+        route: '/skills'
       },
       {
         label: 'Experience',
-        icon: 'pi pi-user-edit'
+        icon: 'pi pi-user-edit',
+        route: '/Experience'
       },
       {
         label: 'Contact',
-        icon: 'pi pi-phone'
+        icon: 'pi pi-phone',
+        route: '/Contact'
       },
     ]
     if (this.isBrowser) {
