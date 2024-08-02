@@ -8,7 +8,8 @@ import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { AboutComponent } from "./components/about/about.component";
 import { TourComponent } from "./components/tour/tour.component";
-
+import { GalleriaModule, GalleriaResponsiveOptions } from 'primeng/galleria';
+import { PhotoService } from './interface/PhotoService';
 
 
 @Component({
@@ -16,19 +17,43 @@ import { TourComponent } from "./components/tour/tour.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, AvatarModule, AvatarGroupModule, MenubarModule, AboutComponent, TourComponent]
+    imports: [CommonModule, RouterOutlet, AvatarModule, AvatarGroupModule, MenubarModule, AboutComponent, TourComponent
+      ,GalleriaModule,
+    ],
+    providers: [PhotoService],
 })
 export class AppComponent {
   title = 'neerajgupta';
   private isBrowser: boolean;
 
   items: MenuItem[] | undefined;
+responsiveOptions: GalleriaResponsiveOptions[]|undefined;
+images: any[] = [];
+ 
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private faviconService: FeviconService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private faviconService: FeviconService,
+private photoService:PhotoService) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
+    this.photoService.getImages().then((images: any) => {
+      this.images = images; // Bind the fetched images to the images property
+    });
+    this.responsiveOptions = [
+        {
+            breakpoint: '1024px',
+            numVisible: 5
+        },
+        {
+            breakpoint: '768px',
+            numVisible: 3
+        },
+        {
+            breakpoint: '560px',
+            numVisible: 1
+        }
+    ];
     this.items = [
       {
         label: 'Home',

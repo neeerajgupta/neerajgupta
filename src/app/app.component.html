@@ -1,4 +1,28 @@
 <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="p-grid">
     <header class="p-col-12 p-d-flex p-ai-center">
       <div class="p-col-2 p-sm-2 logo">
@@ -58,6 +82,27 @@
     </header>
 
 </div>
+</div>
+
+<div style="margin-top: 50px;">
+  <p-galleria 
+  [value]="images" 
+  [responsiveOptions]="responsiveOptions" 
+  [containerStyle]="{ 'max-width': '640px' }" 
+  [numVisible]="5" class="galleriahtm">
+      <ng-template pTemplate="item" let-item>
+        <div class="p-d-flex imgcontetb">
+          <h1>{{item.title}}</h1>
+          <img [src]="item.itemImageSrc" style="width: 100%;" />
+        </div>
+          
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+          <div class="grid grid-nogutter justify-content-center">
+              <img [src]="item.thumbnailImageSrc" />
+          </div>
+      </ng-template>
+</p-galleria>
 </div>
 <router-outlet></router-outlet>
 

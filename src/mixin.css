@@ -99,6 +99,51 @@ html {
   }
 }
 
+.galleriahtm{
+
+  .p-galleria-thumbnails-bottom.p-galleria{
+    max-width: 100% !important;
+    height: 100%;
+
+    .p-galleria-content{
+      .p-galleria-item-wrapper{
+        .p-galleria-item-container{
+          height: 350px;
+          .p-galleria-item{
+            .imgcontetb{
+              height: 350px;
+            }
+          }
+        }
+      }
+      .p-galleria-thumbnail-wrapper{
+        .p-galleria-thumbnail-container{
+          
+          .p-galleria-thumbnail-items-container{
+            height: 100px;
+            width: auto;
+            .p-galleria-thumbnail-items{
+              .p-galleria-thumbnail-item{
+                flex: 1 0 20%;
+                height: 100px;
+                width: 100px;
+                overflow: hidden;
+                gap: 10px;
+                margin: 10px
+              }
+      
+            }
+          }
+      
+        }
+      }
+
+    }
+   
+  }
+ 
+}
+
 /* Header End */
 
 /* About Strat */
