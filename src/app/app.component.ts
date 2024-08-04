@@ -11,6 +11,8 @@ import { TourComponent } from "./components/tour/tour.component";
 import { GalleriaModule, GalleriaResponsiveOptions } from 'primeng/galleria';
 import { PhotoService } from './interface/PhotoService';
 
+import { CardModule } from 'primeng/card';
+
 
 @Component({
     selector: 'app-root',
@@ -19,6 +21,7 @@ import { PhotoService } from './interface/PhotoService';
     styleUrl: './app.component.css',
     imports: [CommonModule, RouterOutlet, AvatarModule, AvatarGroupModule, MenubarModule, AboutComponent, TourComponent
       ,GalleriaModule,
+      CardModule,
     ],
     providers: [PhotoService],
 })

@@ -100,24 +100,56 @@ html {
 }
 
 .galleriahtm{
-
-  .p-galleria-thumbnails-bottom.p-galleria{
+  .p-galleria{
     max-width: 100% !important;
     height: 100%;
-
     .p-galleria-content{
       .p-galleria-item-wrapper{
         .p-galleria-item-container{
           height: 350px;
           .p-galleria-item{
+            /* &:first-child{
+              .imgcontetb{
+                display: none !important;
+              }
+                
+              } */
+           
             .imgcontetb{
               height: 350px;
+              width: 100%;
+              &.ng-star-inserted{
+                display:none !important;
+              }
+              
+              .p-card{
+                width: 100%;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(rgb(178 198 237), rgb(225 226 227), rgb(99 99 100));
+                .p-card-body{
+                  .p-card-content{
+                    display: flex;
+                    justify-content: space-between;
+                    img{
+                      height: 300px;
+                      width: 300px;
+                      margin-top: -27px;
+                    }
+                  }
+                 
+                }
+              }
             }
           }
         }
       }
       .p-galleria-thumbnail-wrapper{
         .p-galleria-thumbnail-container{
+          background: transparent;
+          /* background-image: linear-gradient(to right, red , yellow); */
+          background-image: linear-gradient(rgb(178 198 237), rgb(225 226 227), rgb(99 99 100));
+          padding: 1rem 0.25rem;
+          z-index: 1;
           
           .p-galleria-thumbnail-items-container{
             height: 100px;

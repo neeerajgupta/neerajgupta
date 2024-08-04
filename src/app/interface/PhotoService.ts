@@ -18,14 +18,14 @@ export class PhotoService {
                 title: 'Title 2'
             },
             {
-                itemImageSrc: 'https://primefaces.org/cdn/primeng/images/galleria/galleria3.jpg',
-                thumbnailImageSrc: 'https://primefaces.org/cdn/primeng/images/galleria/galleria3s.jpg',
+                itemImageSrc: '/assets/images/Headerimg/3.jpg',
+                thumbnailImageSrc: '/assets/images/Headerimg/3.jpg',
                 alt: 'Description for Image 3',
                 title: 'Title 3'
             },
             {
-                itemImageSrc: 'https://primefaces.org/cdn/primeng/images/galleria/galleria4.jpg',
-                thumbnailImageSrc: 'https://primefaces.org/cdn/primeng/images/galleria/galleria4s.jpg',
+                itemImageSrc: '/assets/images/Headerimg/2.jpg',
+                thumbnailImageSrc: '/assets/images/Headerimg/2.jpg',
                 alt: 'Description for Image 4',
                 title: 'Title 4'
             },
