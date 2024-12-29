@@ -1,1 +1,17 @@
-<p>sidebar works!</p>
+<div class="sidebarmenu" [ngClass]=" expend ? 'expend' : 'close'">
+
+    <div class="app-brand">
+        <img src="/assets/IMAGE/logo1.png" alt=""  height="34px" width="40px" class="imglogo">
+        <img src="/assets/IMAGE/download (8).jpeg" alt="" height="50px" width="150px"  class="imglogo1">
+        <i  [ngClass]=" expend ? 'pi pi-angle-left' : 'pi pi-angle-right'" (click)="clickEvent()"></i>
+        
+
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+            <i class="ti menu-toggle-icon d-none d-xl-block align-middle"></i>
+            <i class="ti ti-x d-block d-xl-none ti-md align-middle"></i>
+        </a>
+    </div>
+
+    <p-panelMenu [model]="items" styleClass="sidepanelmenu" />
+</div>

@@ -1,0 +1,64 @@
+.dashbordView {
+
+    .p-carousel {
+        width: calc(100vw - 150px);
+        margin-top: 16px;
+
+        .p-carousel-content {
+            .p-carousel-container {
+
+                // .p-carousel .p-carousel-content .p-carousel-prev,
+                // .p-carousel .p-carousel-content .p-carousel-next {}
+                .p-carousel-items-content {
+
+                    .p-carousel-items-container {
+                        .p-carousel-item {
+                            flex: none !important;
+                        }
+
+                        .relativeimage {
+                            border: 1px solid rgb(177, 177, 177);
+                            border-radius: 8px;
+                            padding: 10px;
+                            margin-left: 10px;
+                            height: 350px;
+                            width: 350px;
+                            text-align: center;
+                            position: relative;
+
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                border-radius: 8px;
+                                transition: 3s;
+                                &:hover{
+                                    filter: grayscale(100);
+                                    transition: 3s;
+                                    transform: rotate(2deg);
+                                    
+                                }
+                            }
+
+                            .tagAbsolute {
+                                position: absolute;
+                                transform: rotate(40deg);
+
+                                .p-tag {
+                                    padding: 0px 4px;
+                                    .p-tag-value {
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        width: 92px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}

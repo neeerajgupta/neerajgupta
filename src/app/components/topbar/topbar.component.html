@@ -1,0 +1,22 @@
+<div class="dashbordView">
+    <p-carousel [value]="photos" [numVisible]="3" [numScroll]="3" [circular]="false"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-photos pTemplate="item">
+
+            <!-- <div>{{photos.id}}</div> -->
+
+                    <div class="relativeimage ">
+                        <img [src]="photos.image" [alt]="photos.image" height="100%" [pTooltip]="photos.tourcity" 
+                        tooltipPosition="right"/>
+                        <p-tag 
+                        [value]="photos.tourcity" 
+                        [severity]="getSeverity(photos.Distic)" 
+                        class="tagAbsolute" 
+                        [ngStyle]="{ 'left.%': 74, 'top.px': 24 }"   />
+                        
+
+                    </div>
+               
+        </ng-template>
+    </p-carousel>
+</div>

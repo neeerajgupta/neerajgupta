@@ -9,6 +9,19 @@
     border-radius: 10px;
 
     .p-menubar {
+
+        .p-menubar-start{
+            .p-inputtext{
+                width: calc(100vw - 486px);
+                border: none;
+                padding: 8px 2.5rem;
+                &:focus{
+                    border: none;
+                    box-shadow: none;
+                    outline: none;
+                }
+            }
+        }
         .p-menubar-root-list {
             .p-menuitem {
                 .p-menuitem-content {
@@ -31,4 +44,17 @@
         }
 
     }
+
+    .p-avatar{
+        cursor: pointer;
+    }
+    a{
+        color: #0c0c0c;
+       .p-avatar{
+            &:hover{
+                background: #aba0a0;
+            }
+       } 
+    }
+    
 }

@@ -1,4 +1,43 @@
 <div class="topbar">
-    <p-menubar [model]="items" />
-</div>
+    <!-- <p-menubar [model]="items" /> -->
+    <p-menubar>
+        <ng-template pTemplate="start">
+            <p-iconField iconPosition="left">
+                <p-inputIcon styleClass="pi pi-search" />
+                <input type="text" pInputText placeholder="Search" />
+            </p-iconField>
+        </ng-template>
 
+        <ng-template pTemplate="end">
+            <div class="p-d-flex">
+                <a href="https://www.linkedin.com/in/neeraj-gupta-9ab41a26a">
+                    <p-avatar href="/" class="p-mr-2" icon="pi pi-linkedin" shape="circle" />
+
+                </a>
+                <a href="https://github.com/neeerajgupta" target="_blank" rel="noopener noreferrer">
+                    
+                    <p-avatar class="p-mr-2" icon="pi pi-github" shape="circle"></p-avatar>
+                    
+            </a>
+                <a href="/"> <p-avatar href="/" class="p-mr-2" icon="pi pi-whatsapp" shape="circle" />
+
+                </a> 
+                <a href="https://www.instagram.com/lovepreetgupta.k/">
+
+                    <p-avatar href="/" class="p-mr-2" icon="pi pi-instagram" shape="circle" />
+
+                </a> 
+                
+               
+                 <a href="https://neeerajgupta.github.io/OurWebsit_Portfolio/">
+                    <p-avatar href="/" class="p-mr-2" icon="pi pi-external-link" shape="circle" />
+                </a>
+                <a>
+                    <p-avatar image="https://github.com/neeerajgupta/image/blob/main/neeraj.jpg?raw=true"
+                        shape="circle" />
+                </a>
+            </div>
+        </ng-template>
+    </p-menubar>
+
+</div>

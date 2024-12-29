@@ -1,0 +1,296 @@
+.sidebarmenu {
+    box-shadow: 0 .125rem .5rem 0 rgba(47, 43, 61, .12);
+    height: 92vh;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgb(199 41 41 / 0%);
+    background: #ffff;
+    // position: fixed;
+    // z-index: 99999;
+
+
+
+    &.expend {
+        width: 14.50rem;
+        transition: width 1s;
+
+        .imglogo1 {
+            width: 150px;
+            transition: width 1s;
+        }
+
+
+    }
+
+    &.close {
+        width: 5rem;
+        transition: width 1s;
+
+        .imglogo {}
+
+        .imglogo1 {
+            // display: none;
+            width: 0px;
+            transition: width 1s;
+        }
+
+
+        .p-panelmenu {
+            .p-panelmenu-panel {
+                .p-panelmenu-header {
+                    .p-panelmenu-header-content {
+                        padding: 0px;
+
+                        .p-panelmenu-header-action {
+                            padding: 10px 24px;
+
+                            .p-menuitem-text {
+                                display: none;
+                                transition: 1s;
+                            }
+
+                            .p-icon-wrapper {
+                                display: none;
+                            }
+
+                            &.p-menuitem-link-active {
+                                background: linear-gradient(270deg, rgba(115, 103, 240, 0.7) 0%, #7367f0 100%);
+                                box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, .3);
+                                border-left: 2px solid #2e599e;
+                                color: #ffffff;
+                                border-radius: 20px;
+                                width: 102%;
+
+                            }
+                        }
+
+
+                    }
+                }
+
+                .p-panelmenu-content {
+                    display: none;
+                    transition: 1s;
+                }
+            }
+        }
+    }
+
+
+    .app-brand {
+        display: flex;
+        justify-content: space-around;
+        padding: 8px 16px;
+        align-items: center;
+
+        .pi {
+            border: 1px solid #ebf3fe;
+            border-radius: 50%;
+            padding: 2px;
+
+            &:hover {
+                border: 1px solid rgb(88, 64, 64);
+                background: #ebf3fe;
+            }
+        }
+    }
+
+    .p-panelmenu {
+        border: none;
+        border-radius: 0px;
+        background: transparent;
+        box-shadow: none;
+
+        .p-panelmenu-panel {
+            &:hover {
+                // background: #ebf3fe;
+                background: linear-gradient(270deg, rgba(115, 103, 240, 0.7) 0%, #7367f0 100%);
+                box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, .3);
+                border-radius: 20px;
+
+                .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action {
+                    .p-icon-wrapper {
+                        .p-icon.p-submenu-icon {
+                            color: #ffffff;
+                        }
+                    }
+
+                    .p-menuitem-icon {
+                        color: #fafcff;
+
+                    }
+
+                    .p-menuitem-text {
+                        color: #fdfeff;
+                    }
+                }
+            }
+
+            .p-panelmenu-header {
+                .p-panelmenu-header-content {
+                    border: none;
+                    background: transparent;
+                    width: auto;
+                    max-width: max-content;
+                    // padding: 10px 24px;
+
+                    .p-panelmenu-header-action {
+                        // padding: 0px;
+                        font-weight: 500;
+
+                        padding: 10px 24px;
+
+                        &.p-menuitem-link-active {
+                            background: linear-gradient(270deg, rgba(115, 103, 240, 0.7) 0%, #7367f0 100%);
+                            box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, .3);
+                            border-left: 2px solid #2e599e;
+                            color: #ffffff;
+                            border-radius: 20px;
+                            width: 230px;
+
+                        }
+
+                        .p-menuitem-icon {
+                            color: #0c0c0c;
+
+                        }
+
+                        .p-menuitem-text {
+                            color: #0c0c0c;
+                        }
+
+                        .p-icon-wrapper {
+                            position: unset;
+                            transform: translate(198px);
+                            transition: transform 1s;
+                            background: transparent;
+                            border: none;
+
+                            .p-icon.p-submenu-icon {
+                                color: #0c0c0c;
+                                position: absolute;
+                                top: -8px;
+                                left: -10px;
+                            }
+                        }
+
+
+                        &:hover {
+                            .p-menuitem-icon {
+                                color: #fcfdff;
+
+                            }
+
+                            .p-menuitem-text {
+                                color: #ffffff;
+                            }
+
+                        }
+                    }
+
+                    &:hover {
+                        background: linear-gradient(270deg, rgba(114, 103, 240, 0.055) 0%, #7267f023 100%);
+                        color: #ffffff;
+
+                        .p-menuitem-icon {
+                            color: #ffffff;
+
+                        }
+
+                        .p-menuitem-text {
+                            color: #ffffff;
+                        }
+
+                    }
+
+                }
+
+
+
+
+            }
+
+            // toggleable-content
+            .p-toggleable-content {
+                .p-panelmenu-content {
+                    background: #ffffff;
+                    border: none;
+
+                    .p-submenu-list.p-panelmenu-root-list {
+
+                        .p-menuitem {
+                            .p-menuitem-content {
+                                color: #0c0c0c;
+                                transition: background-color 0.2s, box-shadow 0.2s;
+                                border-radius: 0;
+
+                                .p-menuitem-link {
+                                    color: #0c0c0c;
+                                    padding: 8px 24px;
+                                    font-size: 14px;
+                                    line-height: 22px;
+                                    font-weight: 400;
+                                    user-select: none;
+
+                                    .p-icon-wrapper {
+                                        .p-icon.p-submenu-icon {
+                                            color: #0c0c0c;
+                                        }
+                                    }
+
+
+                                    .p-menuitem-icon {
+                                        color: #0c0c0c;
+                                    }
+
+                                    .p-menuitem-text {
+                                        color: #0c0c0c;
+                                        font-size: 14px;
+                                        line-height: 22px;
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    .p-menuitem:not(.p-highlight):not(.p-disabled)>.p-menuitem-content:hover {
+                        // background: #ebf3fe;
+                        background: linear-gradient(270deg, rgba(115, 103, 240, 0.7) 0%, #7367f0 100%);
+                        box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, .3);
+                        color: #ffffff;
+                        transition: background-color 0.2s, box-shadow 0.2s;
+                        border-radius: 20px;
+
+                        .p-menuitem-link {
+                            color: #2e599e;
+                            padding: 8px 24px;
+                            user-select: none;
+
+                            .p-icon-wrapper {
+                                .p-icon.p-submenu-icon {
+                                    color: #ffffff;
+                                    // margin-left: 4px;
+                                }
+                            }
+
+                            .p-menuitem-icon {
+                                color: #ffffff;
+                            }
+
+                            .p-menuitem-text {
+                                color: #ffffff;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+    }
+}

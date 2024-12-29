@@ -1,3 +1,32 @@
 
 @import "./assets/styles/header.scss";
 @import "./assets/styles/sidebar.scss";
+@import "./assets/styles/topbar.scss";
+
+body{
+    background: #ced5f129;
+    // overflow-x: hidden;
+}
+.layout__section{
+    position: relative;
+    display: flex;
+    z-index: 9999;
+    app-header{
+        position: fixed;
+        left: 98px;
+        width: calc(100% - 106px);
+    }
+    app-sidebar{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    
+    }
+   
+    
+}
+
+
+.dashbord{
+    margin: 55px 0px 0px 98px;
+}
