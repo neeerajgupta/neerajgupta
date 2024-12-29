@@ -114,6 +114,7 @@
 
         &:hover {
             cursor: pointer;
+
             img {
                 filter: grayscale(100);
                 transition: 3s;
@@ -131,5 +132,38 @@
         box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
         background: #826ded24;
         width: calc(100vw - 140px);
+
+        .messagesInfo {
+
+            padding: 20px;
+            justify-content: space-between;
+            display: flex;
+            flex-wrap: wrap;
+
+            &>div {
+                width: 53%;
+
+                @media screen and (max-width: 1086px) {
+                    width: 100%;
+                }
+
+            }
+
+            .textarea {
+                >span {
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        bottom: 88px;
+                        left: 13px;
+                    }
+                }
+            }
+
+            .p-inputtext {
+                width: 100%;
+            }
+        }
     }
 }

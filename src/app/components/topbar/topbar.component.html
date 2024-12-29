@@ -33,27 +33,43 @@
         </div>
     </div>
     <div class=" p-jc-center p-text-center  messages">
-        <h1>Get in Touch</h1>
-        <div class="p-mt-5 p-jc-between p-d-flex p-flex-wrap">
-            <div class=" ">
-                <div>
-                    <label for="integer" class="font-bold block mb-2"> Integer </label>
-                    <input pInputText id="integer" pKeyFilter="int" class="w-full" />
+        <h1 class="p-m-0">Get in Touch</h1>
+        <div class="messagesInfo">
+          
+            <div class="  ">
+
+                <div class="p-mt-5">
+                    <p-iconField class="p-mt-5" iconPosition="left">
+                        <p-inputIcon styleClass="pi pi-user" />
+                        <input type="text" pInputText placeholder="Name" />
+                    </p-iconField>
+
                 </div>
-                <div>
-                    <label for="number" class="font-bold block mb-2"> Number </label>
-                    <input pInputText id="number" pKeyFilter="num" class="w-full" />
-                </div>
-                <div>
-                    <label for="money" class="font-bold block mb-2"> Money </label>
-                    <input pInputText id="money" pKeyFilter="money" class="w-full" />
+
+                <div class="p-mt-5">
+                    <p-iconField class="p-mt-5" iconPosition="left">
+                        <p-inputIcon styleClass="pi pi-envelope" />
+                        <input type="mail" pInputText placeholder="Email" />
+                    </p-iconField>
                 </div>
 
 
+                <div class="p-mt-5">
+                    <p-iconField class="p-mt-5" iconPosition="left">
+                        <p-inputIcon styleClass="pi pi-phone" />
+                        <input type="number" pInputText placeholder="Phone" />
+                    </p-iconField>
+                </div>
+                <div class="p-mt-5 textarea">
+                    <span class="pi pi-comment" >
+                       
+                        <textarea  rows="5" cols="70" pInputTextarea></textarea>
+                    </span>
+                </div>
             </div>
-            <div class="">
-                <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="">
-            </div>
+
+            <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="">
+
         </div>
     </div>
 </div>
