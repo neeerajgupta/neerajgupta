@@ -1,22 +1,59 @@
 <div class="dashbordView">
+
+    <!-- https://codepen.io/cltpcxsd-the-sasster/pen/zYawgzP -->
     <p-carousel [value]="photos" [numVisible]="3" [numScroll]="3" [circular]="false"
-        [responsiveOptions]="responsiveOptions">
+        [responsiveOptions]="responsiveOptions" autoplayInterval="3000">
         <ng-template let-photos pTemplate="item">
 
             <!-- <div>{{photos.id}}</div> -->
 
-                    <div class="relativeimage ">
-                        <img [src]="photos.image" [alt]="photos.image" height="100%" [pTooltip]="photos.tourcity" 
-                        tooltipPosition="right"/>
-                        <p-tag 
-                        [value]="photos.tourcity" 
-                        [severity]="getSeverity(photos.Distic)" 
-                        class="tagAbsolute" 
-                        [ngStyle]="{ 'left.%': 74, 'top.px': 24 }"   />
-                        
+            <div class="relativeimage ">
+                <img [src]="photos.image" [alt]="photos.image" height="100%" [pTooltip]="photos.tourcity"
+                    tooltipPosition="right" />
+                <p-tag [value]="photos.tourcity" [severity]="getSeverity(photos.Distic)" class="tagAbsolute"
+                    [ngStyle]="{ 'left.%': 74, 'top.px': 24 }" />
 
-                    </div>
-               
+
+            </div>
+
         </ng-template>
     </p-carousel>
+
+
+    <div class="dashbordAbout">
+        <div>
+            <h1>Hi There,</h1>
+            <h1 class="p-ml-3">I'm <strong>Neeraj Gupta</strong></h1>
+            <h3 class="p-ml-5">i am <span class="position"></span></h3>
+        </div>
+        <div class="positionimg">
+
+            <img src="https://raw.githubusercontent.com/neeerajgupta/image/refs/heads/main/neeraj.jpg" alt="">
+
+        </div>
+    </div>
+    <div class=" p-jc-center p-text-center  messages">
+        <h1>Get in Touch</h1>
+        <div class="p-mt-5 p-jc-between p-d-flex p-flex-wrap">
+            <div class=" ">
+                <div>
+                    <label for="integer" class="font-bold block mb-2"> Integer </label>
+                    <input pInputText id="integer" pKeyFilter="int" class="w-full" />
+                </div>
+                <div>
+                    <label for="number" class="font-bold block mb-2"> Number </label>
+                    <input pInputText id="number" pKeyFilter="num" class="w-full" />
+                </div>
+                <div>
+                    <label for="money" class="font-bold block mb-2"> Money </label>
+                    <input pInputText id="money" pKeyFilter="money" class="w-full" />
+                </div>
+
+
+            </div>
+            <div class="">
+                <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="">
+            </div>
+        </div>
+    </div>
 </div>

@@ -32,11 +32,12 @@
                                 object-fit: cover;
                                 border-radius: 8px;
                                 transition: 3s;
-                                &:hover{
+
+                                &:hover {
                                     filter: grayscale(100);
                                     transition: 3s;
                                     transform: rotate(2deg);
-                                    
+
                                 }
                             }
 
@@ -46,6 +47,7 @@
 
                                 .p-tag {
                                     padding: 0px 4px;
+
                                     .p-tag-value {
                                         overflow: hidden;
                                         white-space: nowrap;
@@ -60,5 +62,74 @@
             }
         }
 
+    }
+
+    .dashbordAbout {
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 8px;
+        padding: 10px 20px;
+        box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
+        display: flex;
+        align-items: center;
+
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: calc(100vw - 140px);
+
+        h1 {
+            font-weight: 800;
+            color: #22107c;
+
+            >strong {
+                color: #fd6000c7;
+            }
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #22107c;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #22107c;
+        }
+
+        .position {
+            color: rgb(207 11 11 / 98%);
+        }
+
+        .positionimg {
+            height: 300px;
+            width: 300px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: 3s;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            img {
+                filter: grayscale(100);
+                transition: 3s;
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+
+    .messages {
+        margin-top: 24px;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 8px;
+        padding: 10px 20px;
+        box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
+        background: #826ded24;
+        width: calc(100vw - 140px);
     }
 }
