@@ -4,7 +4,7 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 
 export const routes: Routes = [
-    { path: 'welcome', component: HeaderComponent },
+    { path: 'welcome', component: TopbarComponent },
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     // { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
     // {path:"header", component:HeaderComponent},
