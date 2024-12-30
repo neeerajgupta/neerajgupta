@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PhoteSrvicescesService } from '../../services/phote-srvicesces.service';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TagModule } from 'primeng/tag';
 import { TooltipModule } from 'primeng/tooltip';
 
@@ -12,11 +12,12 @@ import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'app-topbar',
     standalone: true,
-    imports: [CarouselModule, CommonModule, FormsModule, HttpClientModule, TagModule,TooltipModule, InputTextModule,InputIconModule,IconFieldModule,FloatLabelModule,InputTextareaModule],
+    imports: [CarouselModule, CommonModule, FormsModule, HttpClientModule, TagModule,TooltipModule, InputTextModule,InputIconModule,IconFieldModule,FloatLabelModule,InputTextareaModule,ButtonModule, ReactiveFormsModule],
     templateUrl: './topbar.component.html',
     styleUrl: './topbar.component.scss',
     providers: [PhoteSrvicescesService]
@@ -26,6 +27,9 @@ export class TopbarComponent implements OnInit {
    
 
     responsiveOptions: any[] | undefined;
+
+
+   
 
 
 
@@ -38,8 +42,15 @@ export class TopbarComponent implements OnInit {
     private isDeleting: boolean = false;
 
 
-
-    constructor(private photeSrvicesces: PhoteSrvicescesService) { }
+    myForm: FormGroup;
+    constructor(private photeSrvicesces: PhoteSrvicescesService,private fb: FormBuilder, private http:HttpClient) { 
+        this.myForm = this.fb.group({
+            name: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            phone: ['', Validators.required],
+            msg: [''],
+          });
+    }
 
     ngOnInit() {
         this.photeSrvicesces.photeSrvicescesData().subscribe(
@@ -114,6 +125,22 @@ export class TopbarComponent implements OnInit {
         }
     
         setTimeout(() => this.type(), speed);
+      }
+
+
+      onSubmit() {
+        if (this.myForm.valid) {
+          const formData = this.myForm.value;
+          console.log('Form submitted:', formData);
+          
+          // Send to the server
+          this.http.post('https://github.com/neeerajgupta/image/blob/main/Data.json', formData)
+              .subscribe(response => {
+                  console.log('Data saved successfully', response);
+              }, error => {
+                  console.error('Error saving data', error);
+              });
+        }
       }
 
 }

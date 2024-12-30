@@ -36,12 +36,13 @@
         <h1 class="p-m-0">Get in Touch</h1>
         <div class="messagesInfo">
           
+           <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
             <div class="  ">
 
                 <div class="p-mt-5">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-user" />
-                        <input type="text" pInputText placeholder="Name" />
+                        <input type="text" pInputText placeholder="Name" formControlName="name" />
                     </p-iconField>
 
                 </div>
@@ -49,7 +50,7 @@
                 <div class="p-mt-5">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-envelope" />
-                        <input type="mail" pInputText placeholder="Email" />
+                        <input type="mail" pInputText placeholder="Email" formControlName="email" />
                     </p-iconField>
                 </div>
 
@@ -57,16 +58,20 @@
                 <div class="p-mt-5">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-phone" />
-                        <input type="number" pInputText placeholder="Phone" />
+                        <input type="number" pInputText placeholder="Phone" formControlName="phone" />
                     </p-iconField>
                 </div>
                 <div class="p-mt-5 textarea">
                     <span class="pi pi-comment" >
                        
-                        <textarea  rows="5" cols="70" pInputTextarea></textarea>
+                        <textarea  rows="5" cols="70" pInputTextarea formControlName="msg"></textarea>
                     </span>
                 </div>
+
+
+                <p-button styleClass="p-mt-3" icon="pi pi-send" type="submit" label="Submit" [raised]="true" severity="secondary" />
             </div>
+           </form>
 
             <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="">
 
