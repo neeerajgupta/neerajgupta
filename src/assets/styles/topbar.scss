@@ -3,8 +3,17 @@
     .p-carousel {
         width: calc(100vw - 150px);
         margin-top: 16px;
-        @media screen and (max-width: 980px) {
-            width: auto;
+        @media screen and (max-width: 1199px) {
+            
+            width: calc(100vw - -90px);
+                .p-carousel-content{
+                    .p-carousel-container{
+                        .p-link{
+                            display: none;
+                        }
+                    }
+                }
+          
         }
 
         .p-carousel-content {
@@ -79,6 +88,12 @@
         flex-wrap: wrap;
         width: calc(100vw - 140px);
 
+        @media screen and (max-width: 1199px) {
+            
+            width: calc(100vw - -90px);
+          
+        }
+
         h1 {
             font-weight: 800;
             color: #22107c;
@@ -135,6 +150,12 @@
         box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
         background: #826ded24;
         width: calc(100vw - 140px);
+
+        @media screen and (max-width: 1199px) {
+            
+            width: calc(100vw - -90px);
+          
+        }
 
         .messagesInfo {
 
