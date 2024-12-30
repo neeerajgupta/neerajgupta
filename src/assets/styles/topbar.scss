@@ -3,6 +3,9 @@
     .p-carousel {
         width: calc(100vw - 150px);
         margin-top: 16px;
+        @media screen and (max-width: 980px) {
+            width: auto;
+        }
 
         .p-carousel-content {
             .p-carousel-container {
