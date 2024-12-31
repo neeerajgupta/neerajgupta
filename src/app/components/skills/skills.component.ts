@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [FormsModule,CommonModule,ProgressBarModule],
+  imports: [FormsModule,CommonModule,ProgressBarModule,ButtonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
