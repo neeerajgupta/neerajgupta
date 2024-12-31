@@ -3,17 +3,18 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./layouts/header/header.component";
 import { SidebarComponent } from "./layouts/sidebar/sidebar.component";
+import { TopbarComponent } from "./components/topbar/topbar.component";
+import { SkillsComponent } from "./components/skills/skills.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, SidebarComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'NeerajGupta';
-  items: any
   private isBrowser: boolean;
 
 
@@ -24,26 +25,7 @@ export class AppComponent {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
   ngOnInit(): void {
-    this.items = [
-      {
-        label: 'Home1',
-        icon: 'pi pi-home',
-        routerLink: '/',
-        routerLinkActiveOptions: { exact: true }
-      },
-      {
-        label: 'About',
-        icon: 'pi pi-star',
-        routerLink: '/about',
-        routerLinkActiveOptions: { exact: true }
-      },
-      {
-        label: 'Projects',
-        icon: 'pi pi-search',
-        route: '/tour',
-
-      }
-    ]
+   
     if (this.isBrowser) {
       document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));
     }
@@ -75,4 +57,8 @@ export class AppComponent {
       this.setFavicon('https://github.com/neeerajgupta/image/blob/main/welcomeback.jpeg?raw=true');
     }
   }
+
+
+  
+
 }

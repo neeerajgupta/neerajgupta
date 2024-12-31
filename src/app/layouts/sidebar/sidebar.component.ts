@@ -15,25 +15,35 @@ export class SidebarComponent {
 
   items: any;
 
-  constructor(private route: Router) { }
+  constructor(private router: Router) { }
   ngOnInit() {
     this.items = [
       {
         label: 'Header',
         icon: 'pi pi-home',
         routerLink: '/welcome',
-        routerLinkActiveOptions: { exact: true }
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('topbar') 
       },
       {
         label: 'Dashbord',
         icon: 'pi pi-star',
         routerLink: '/topbar',
-        routerLinkActiveOptions: { exact: true }
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('topbar') 
+      },
+      {
+        label: 'Skills',
+        icon: 'pi pi-graduation-cap',
+        routerLink: '/skills',
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('skills') 
+
       },
       {
         label: 'Projects',
         icon: 'pi pi-search',
-        route: '/tour',
+        routerLink: '/tour',
 
       }
     ]
@@ -43,5 +53,25 @@ export class SidebarComponent {
   clickEvent() {
     this.expend = !this.expend;
   }
+
+  
+
+  smoothScrollTo(elementId: string) {
+    this.router.navigate([`/${elementId}`]).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - 70;
+  
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth' 
+          });
+        }
+      }, 0);
+    });
+  }
+  
 
 }

@@ -1,0 +1,49 @@
+.skills{
+    margin-top: 20px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
+    padding: 10px 20px;
+    // height: 300px;
+    background-image: url(https://github.com/neeerajgupta/image/blob/main/neeraj1.jpg?raw=true);
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    overflow: hidden;
+    height: 30%;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(47 45 129 / 62%);
+        backdrop-filter: blur(1px); 
+        z-index: 1; 
+    }
+    .skills-contats{
+        >h2{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            
+
+        }
+        z-index: 4;
+        position: relative;
+
+        .p-progressbar{
+            height: 10px;
+            .p-progressbar-value.p-progressbar-value-animate{
+                .p-progressbar-label{
+                    font-size: 10px;
+                }
+
+            }
+        }
+        
+       
+    }
+}
