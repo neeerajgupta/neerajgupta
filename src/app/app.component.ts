@@ -1,15 +1,16 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./layouts/header/header.component";
 import { SidebarComponent } from "./layouts/sidebar/sidebar.component";
 import { TopbarComponent } from "./components/topbar/topbar.component";
 import { SkillsComponent } from "./components/skills/skills.component";
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent,ButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -59,6 +60,25 @@ export class AppComponent {
   }
 
 
+  showButton = false; // Initially hide the button
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Show button when scrolled down more than 100px
+    this.showButton = window.scrollY > 100;
+  }
+  smoothScrollTo(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - 70;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
   
 
 }

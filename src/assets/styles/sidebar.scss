@@ -14,6 +14,7 @@
     &.expend {
         width: 14.50rem;
         transition: width 1s;
+        height: 100vh;
 
         .imglogo1 {
             width: 150px;
@@ -26,6 +27,7 @@
     &.close {
         width: 5rem;
         transition: width 1s;
+        height: 100vh;
 
         .imglogo {}
 

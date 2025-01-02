@@ -1,13 +1,28 @@
-
-
-<div class="p-d-flex" >
+<div class="p-d-flex">
     <div class="layout__section">
         <app-header></app-header>
         <app-sidebar></app-sidebar>
     </div>
-   <div class="dashbord">
-    <!-- <router-outlet></router-outlet> -->
-     <app-topbar id="topbar"></app-topbar>
-     <app-skills id="skills"></app-skills>
-   </div>
+    <div class="dashbord">
+        <!-- <router-outlet></router-outlet> -->
+
+        <app-topbar id="topbar"></app-topbar>
+        <app-skills id="skills"></app-skills>
+
+        <!-- <a  class="scrollbtn" (click)="smoothScrollTo('topbar')">Scroll to Top</a> -->
+
+
+
+    </div>
+
+
+
+
+    <a class="box__link button-animation scrollbtn" *ngIf="showButton" >
+        <i class="pi pi-angle-up"></i>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
 </div>
