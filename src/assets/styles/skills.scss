@@ -1,4 +1,4 @@
-.skills{
+.skills {
     margin-top: 20px;
     border: 1px solid grey;
     border-radius: 8px;
@@ -6,18 +6,19 @@
     padding: 50px 92px;
     // height: 300px;
     background-image: url(https://github.com/neeerajgupta/image/blob/main/neeraj1.jpg?raw=true);
-    
-    background-size: cover; 
-    background-position: center; 
-    position: relative; 
+
+    background-size: cover;
+    background-position: center;
+    position: relative;
     overflow: hidden;
     height: 30%;
-    
+
     @media screen and (max-width: 600px) {
         height: 40%;
-        
+        width: 96%;
+
     }
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -25,11 +26,12 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background:#0702d930;
-        backdrop-filter: blur(1px); 
-        z-index: 1; 
+        background: #0702d930;
+        backdrop-filter: blur(1px);
+        z-index: 1;
     }
-    .skills-contats{
+
+    .skills-contats {
         border: 1px solid grey;
         border-radius: 8px;
         box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
@@ -44,20 +46,21 @@
         z-index: 4;
         position: relative;
 
-        >h2{
+        >h2 {
             margin-top: 0px;
             display: flex;
             justify-content: center;
             text-align: center;
-            
+
 
         }
-       
 
-        .p-progressbar{
+
+        .p-progressbar {
             height: 10px;
-            .p-progressbar-value.p-progressbar-value-animate{
-                .p-progressbar-label{
+
+            .p-progressbar-value.p-progressbar-value-animate {
+                .p-progressbar-label {
                     font-size: 10px;
                 }
 
@@ -70,42 +73,73 @@
             transition: 0.3s;
             color: #fff;
             background: #2506ad;
-           
+
             font-family: "Nunito", sans-serif;
             text-decoration: none;
             display: flex;
             align-items: center;
 
-            &:hover{
+            &:hover {
                 box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
+
                 i {
                     transform: translateX(5px);
-                    
+
                 }
             }
-             i {
+
+            i {
                 margin-left: 0.3rem;
                 font-size: 1.2rem;
                 transition: 0.3s;
             }
         }
-        
-       
+
+
     }
 }
 
-.skills-Abilities{
-    margin-top: 20px;
-    border: 1px solid grey;
+.skills-Abilities {
+    border: 1px solid rgb(180, 180, 180);
+    background-image: url("./../IMAGE/hills.svg");
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: bottom;
     border-radius: 8px;
-    box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
-    padding: 50px 92px;
-    height: 30%;
-    
-    @media screen and (max-width: 600px) {
-        height: 40%;
-        
+    padding: 10px 20px;
+    margin-top: 10px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
+    display: flex;
+    align-items: center;
+
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: calc(100vw - 140px);
+
+    .skills-atContant {
+        border: 1px solid black;
+        height: 200px;
+        width: 200px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
+        img{
+            object-fit: contain;
+            height: 146px;
+            width: 100%;
+            border-radius: 12px 12px 0px 0px;
+        }
+        h2{
+            margin: 0px;
+            text-align: center;
+        }
     }
 
-    
+    @media screen and (max-width: 1199px) {
+        width: 96%;
+    }
+
+
 }
