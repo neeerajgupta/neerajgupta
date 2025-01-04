@@ -93,3 +93,19 @@
        
     }
 }
+
+.skills-Abilities{
+    margin-top: 20px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
+    padding: 50px 92px;
+    height: 30%;
+    
+    @media screen and (max-width: 600px) {
+        height: 40%;
+        
+    }
+
+    
+}

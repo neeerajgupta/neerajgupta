@@ -3,28 +3,44 @@
 @import "./assets/styles/topbar.scss";
 @import "./assets/styles/skills.scss";
 
-:root {
+// :root {
 
 
-  --body-color: #393937;
-  --accent-color: #03e9f4;
-  --white-color: #fff;
-  --box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
+//   --body-color: #393937;
+//   --accent-color: #03e9f4;
+//   --white-color: #fff;
+//   --box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+//     0 0 100px #03e9f4;
 
 
 
-  --body-font: "Montserrat", sans-serif;
-  --normal-font-size: 1rem;
+//   --body-font: "Montserrat", sans-serif;
+//   --normal-font-size: 1rem;
 
 
-  --font-regular: 400;
-  --font-semi-bold: 600;
+//   --font-regular: 400;
+//   --font-semi-bold: 600;
 
 
-  --z-tooltip: 10;
-  --z-fixed: 100;
+//   --z-tooltip: 10;
+//   --z-fixed: 100;
+// }
+.color-yellow{
+  color: #ffe600 !important;
 }
+
+.color-whitw{
+  color: #ffffff !important;
+}
+.color-black{
+  color: #0c0c0c !important;
+}
+
+#tawkChat {
+  left: 20px !important; /* Adjust the left position */
+  right: auto !important; /* Ensure it doesn't move to the right */
+}
+
 
 body {
   background: #ced5f129;
@@ -67,18 +83,12 @@ body {
   z-index: 99999;
   right: 4%;
   height: 20px;
-
-
   --bg: hsl(190deg 20% 10%);
   background: transparent;
   font-size: 32px;
   display: flex;
   place-content: center;
   flex-wrap: wrap;
-
-
-
-
 
   .box {
     cursor: pointer;
@@ -137,18 +147,6 @@ body {
       --border-angle: 360deg;
     }
   }
-
-
-  /** boilerplate **/
-
-
-
-
-
-
-
-
-
 
 
 }

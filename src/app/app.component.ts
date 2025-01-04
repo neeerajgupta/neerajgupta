@@ -61,10 +61,12 @@ export class AppComponent {
 
 
   showButton = false; // Initially hide the button
+  opacity: number = 1;
+ 
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Show button when scrolled down more than 100px
+ 
     this.showButton = window.scrollY > 100;
   }
   smoothScrollTo(elementId: string) {
