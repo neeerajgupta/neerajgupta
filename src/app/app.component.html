@@ -2,6 +2,13 @@
     <div class="layout__section">
         <app-header></app-header>
         <app-sidebar></app-sidebar>
+
+        <div  class="scrollbtn" *ngIf="showButton" (click)="smoothScrollTo('topbar')">
+            <div class="box c">
+                🚀
+              </div>
+              
+           </div>
     </div>
     <div class="dashbord">
         <!-- <router-outlet></router-outlet> -->
@@ -17,19 +24,5 @@
 
 
 
-<!-- 
-    <a class="box__link button-animation scrollbtn" *ngIf="showButton" >
-        <i class="pi pi-angle-up"></i>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </a> -->
-
-   <div  class="scrollbtn" *ngIf="showButton" (click)="smoothScrollTo('topbar')">
-    <div class="box c">
-        🚀
-      </div>
-      
-   </div>
+   
 </div>
