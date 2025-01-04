@@ -13,6 +13,11 @@
     overflow: hidden;
     height: 30%;
     
+    @media screen and (max-width: 600px) {
+        height: 40%;
+        
+    }
+    
     &::before {
         content: '';
         position: absolute;
@@ -30,9 +35,15 @@
         box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
         padding: 10px 20px;
         background: #bcc0cb57;
+        background-image: url("./../IMAGE/hills.svg");
+        object-fit: contain;
+        background-repeat: no-repeat;
+        background-size: 101%;
+        background-position: bottom;
 
         z-index: 4;
         position: relative;
+
         >h2{
             margin-top: 0px;
             display: flex;

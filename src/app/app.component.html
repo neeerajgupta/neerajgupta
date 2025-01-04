@@ -17,12 +17,19 @@
 
 
 
-
+<!-- 
     <a class="box__link button-animation scrollbtn" *ngIf="showButton" >
         <i class="pi pi-angle-up"></i>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-    </a>
+    </a> -->
+
+   <div  class="scrollbtn" *ngIf="showButton" (click)="smoothScrollTo('topbar')">
+    <div class="box c">
+        🚀
+      </div>
+      
+   </div>
 </div>

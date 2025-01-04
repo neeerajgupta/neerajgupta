@@ -1,176 +1,159 @@
-
 @import "./assets/styles/header.scss";
 @import "./assets/styles/sidebar.scss";
 @import "./assets/styles/topbar.scss";
 @import "./assets/styles/skills.scss";
 
 :root {
-    
-    
-    --body-color: #393937;
-    --accent-color: #03e9f4;
-    --white-color: #fff;
-    --box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-      0 0 100px #03e9f4;
-  
-    
-    
-    --body-font: "Montserrat", sans-serif;
-    --normal-font-size: 1rem;
-  
-    
-    --font-regular: 400;
-    --font-semi-bold: 600;
-  
-    
-    --z-tooltip: 10;
-    --z-fixed: 100;
+
+
+  --body-color: #393937;
+  --accent-color: #03e9f4;
+  --white-color: #fff;
+  --box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+
+
+
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+body {
+  background: #ced5f129;
+  // overflow-x: hidden;
+}
+
+.layout__section {
+  position: relative;
+  display: flex;
+  z-index: 9999;
+
+  app-header {
+    position: fixed;
+    left: 98px;
+    width: calc(100% - 106px);
   }
 
-body{
-    background: #ced5f129;
-    // overflow-x: hidden;
-}
-.layout__section{
-    position: relative;
-    display: flex;
-    z-index: 9999;
-    app-header{
-        position: fixed;
-        left: 98px;
-        width: calc(100% - 106px);
-    }
-    app-sidebar{
-        position: fixed;
-        top: 0px;
-        left: 0px;
-    
-    }
-   
-    
+  app-sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+  }
+
+
 }
 
 
-.dashbord{
-    margin: 55px 0px 0px 98px;
+.dashbord {
+  margin: 55px 0px 0px 98px;
 }
 
 .dashboard {
-    position: relative;
+  position: relative;
 }
 
 .scrollbtn {
-   position: sticky;
-   top: 75vh;
-   height: 20px;
-   z-index: 99999;
-    right: 20px; 
-    width: 20px;
+  position: sticky;
+  top: 75vh;
+  z-index: 99999;
+  right: 20px;
+  height: 20px;
+
+  
+    --bg: hsl(190deg 20% 10%);
+    background: transparent;
+    font-size: 32px;
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+  
 
 
 
 
+  .box {
+    cursor: pointer;
+    --border-angle: 0deg;
+    border-radius: 12px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+    animation: border-angle-rotate 2s infinite linear;
+    border: 0.5rem solid transparent;
+    position: relative;
 
-    &.button-animation {
-        // position: relative;
-        display: inline-block;
-        padding: 20px 30px;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        overflow: hidden;
-        letter-spacing: 4px;
-        transition: 0.5s;
-        span {
-          position: absolute;
-          display: block;
-        }
-      
-        span:nth-child(1) {
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, var(--accent-color));
-          animation: btn-anim1 1s linear infinite;
-        }
-        @keyframes btn-anim1 {
-          0% {
-            left: -100%;
-          }
-          50%,
-          100% {
-            left: 100%;
-          }
-        }
-      
-        span:nth-child(2) {
-          top: -100%;
-          right: 0;
-          width: 2px;
-          height: 100%;
-          background: linear-gradient(180deg, transparent, var(--accent-color));
-          animation: btn-anim2 1s linear infinite;
-          animation-delay: 0.25s;
-        }
-        @keyframes btn-anim2 {
-          0% {
-            top: -100%;
-          }
-          50%,
-          100% {
-            top: 100%;
-          }
-        }
-      
-        span:nth-child(3) {
-          bottom: 0;
-          right: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(270deg, transparent, var(--accent-color));
-          animation: btn-anim3 1s linear infinite;
-          animation-delay: 0.5s;
-        }
-        @keyframes btn-anim3 {
-          0% {
-            right: -100%;
-          }
-          50%,
-          100% {
-            right: 100%;
-          }
-        }
-      
-        span:nth-child(4) {
-          bottom: -100%;
-          left: 0;
-          width: 2px;
-          height: 100%;
-          background: linear-gradient(360deg, transparent, var(--accent-color));
-          animation: btn-anim4 1s linear infinite;
-          animation-delay: 0.75s;
-        }
-      
-        @keyframes btn-anim4 {
-          0% {
-            bottom: -100%;
-          }
-          50%,
-          100% {
-            bottom: 100%;
-          }
-        }
-      
-        &:hover {
-          background-color: var(--accent-color);
-          color: var(--white-color);
-          border-radius: 5px;
-          box-shadow: var(--box-shadow);
-        }
+   
+
+   
+    &.c {
+      border-radius: 100%;
+      // background: radial-gradient(circle, var(--bg) 60%, transparent 60%);
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 4px;
+        border-radius: 100%;
+        animation: border-angle-rotate 4s infinite linear;
+        z-index: -1;
       }
-      
+
+      &:before {
+        inset: 0;
+        background: repeating-conic-gradient(from var(--border-angle),
+            var(--bg),
+            var(--bg) 30deg,
+            oklch(100% 50% 190deg) calc(360deg / 6)) border-box;
+      }
+
+      &:after {
+        background: repeating-conic-gradient(from calc(var(--border-angle) * -1),
+            oklch(100% 40% 50deg),
+            black 60deg) border-box;
+      }
+    }
+  }
+
+  @keyframes border-angle-rotate {
+    from {
+      --border-angle: 0deg;
+    }
+
+    to {
+      --border-angle: 360deg;
+    }
+  }
+
+
+  /** boilerplate **/
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
