@@ -118,22 +118,40 @@
     width: calc(100vw - 140px);
 
     .skills-atContant {
-        border: 1px solid black;
+        border: 1px solid #c5b4b4;
+        cursor: pointer;
         height: 200px;
         width: 200px;
         margin-right: 20px;
         margin-bottom: 20px;
         border-radius: 12px;
         box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
-        img{
+        // background-image: url('./../SkillsImage/Skillsbg-removebg-preview.png');
+        background-image: url("./../IMAGE/hills.svg");
+        background-position: 66% 100%;
+        background-repeat: no-repeat;
+        transition-duration: 3s;
+        .skillsLogo{
+            height: 120px;
+            width: 100%;
             object-fit: contain;
-            height: 146px;
+            margin-bottom: 20px;
+        }
+        img{
+          
+            height: 100%;
             width: 100%;
             border-radius: 12px 12px 0px 0px;
         }
         h2{
             margin: 0px;
             text-align: center;
+        }
+
+        &:hover{
+            filter: grayscale(1.5);
+            transform: rotate(4deg);
+            transition-duration: 3s;
         }
     }
 
