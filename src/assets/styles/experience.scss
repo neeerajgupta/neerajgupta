@@ -1,0 +1,98 @@
+.experience {
+    border: 1px solid rgb(180, 180, 180);
+    background-image: url('../IMAGE/hills.svg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: bottom;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
+    flex-wrap: wrap;
+    width: 98%;
+    margin-top: 20px;
+
+    .experienceheader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >.heading {
+            margin-bottom: 14px;
+            font-weight: 800;
+            color: rgb(34, 16, 124);
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .qoute {
+            color: #0c0c0c;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        >p {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            color: #363636;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+
+    .experience-atContant {
+        border: 1px solid #c5b4b4;
+        cursor: pointer;
+        margin-right: 20px;
+        border-radius: 12px;
+        background-image: url("./../IMAGE/hills.svg");
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transition-duration: 3s;
+        padding: 10px;
+
+        .experienceLogo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .experiencecomp {
+                height: 50px;
+                // width: 100px;
+            }
+        }
+        &:hover {
+            filter: grayscale(50);
+            // transform: rotate(4deg);
+            transition-duration: 2s;
+            box-shadow: 2px 4px 16px #00000029;
+            transform: scale3d(1.05, 1.06, 5.01);
+        }
+    }
+
+    .customized-timeline.p-timeline {
+        .p-timeline-event {
+
+            .p-timeline-event-separator {
+                img {
+                    height: 50px;
+                    height: 50px;
+                    border: 1px solid #7367f0;
+                    border-radius: 50%;
+                    width: 50px;
+                }
+
+                .p-timeline-event-connector {
+                    width: 6px;
+                    background: #7367f0;
+                    border-radius: 10px;
+                    height: 200px;
+                }
+            }
+        }
+
+    }
+}

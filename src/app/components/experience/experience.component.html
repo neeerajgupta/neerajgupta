@@ -1,1 +1,42 @@
-<p>experience works!</p>
+<div class="experience" data-aos="fade-down">
+    <div class="experienceheader">
+        <div class="heading" data-aos="fade-down">
+
+            <img src="../../../assets/IMAGE/experience-removebg-preview.png" alt="" height="100%" width="100%">
+
+            <h2 data-aos="fade-down">Experience</h2>
+        </div>
+        <p data-aos="fade-down">The best return comes from the investment made in knowledge.".</p>
+
+        <p class="qoute" data-aos="fade-down">ज्ञान में दिए गए निवेश से सबसे उत्तम लाभ प्राप्त होता है।.</p>
+    </div>
+
+    <div >
+        <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+            <ng-template pTemplate="marker" let-event>
+                <span class="" [style]="{ 'background-color': event.color }">
+                    <img [src]="event.icon" />
+                </span>
+            </ng-template>
+            <ng-template pTemplate="content" let-event>
+
+                <div class="experience-atContant" >
+                    <div class="experienceLogo" data-aos="fade-down">
+                        <div>
+                            <span>Company Name:</span> <strong>{{event.status}}</strong><br>
+                            <span>Join Date:</span> <strong>{{event.date}}</strong>
+                        </div>
+                       <div class="experiencecomp">
+                        <img [src]="'../../../assets/IMAGE/' + event.image" [alt]="event.name" width="100%" height="100%" />
+                       </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-timeline>
+    </div>
+
+
+    <div style="height: 100px;">
+
+    </div>
+</div>
