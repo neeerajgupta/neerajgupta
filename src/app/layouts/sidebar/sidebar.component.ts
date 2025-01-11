@@ -48,6 +48,14 @@ export class SidebarComponent {
         command: () => this.smoothScrollTo('education') 
 
       },
+      {
+        label: 'experience',
+        icon: 'pi pi-crown',
+        routerLink: '/experience',
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('experience') 
+
+      },
 
       {
         label: 'Projects',

@@ -7,12 +7,13 @@ import { TopbarComponent } from "./components/topbar/topbar.component";
 import { SkillsComponent } from "./components/skills/skills.component";
 import { ButtonModule } from 'primeng/button';
 import { EducationsComponent } from "./components/educations/educations.component";
+import { ExperienceComponent } from "./components/experience/experience.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent, ExperienceComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
