@@ -6,11 +6,13 @@ import { SidebarComponent } from "./layouts/sidebar/sidebar.component";
 import { TopbarComponent } from "./components/topbar/topbar.component";
 import { SkillsComponent } from "./components/skills/skills.component";
 import { ButtonModule } from 'primeng/button';
+import { EducationsComponent } from "./components/educations/educations.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent,ButtonModule],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -26,6 +28,7 @@ export class AppComponent {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
   ngOnInit(): void {
+    
    
     if (this.isBrowser) {
       document.addEventListener('visibilitychange', this.handleVisibilityChange.bind(this));

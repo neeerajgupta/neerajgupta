@@ -2,6 +2,11 @@
 @import "./assets/styles/sidebar.scss";
 @import "./assets/styles/topbar.scss";
 @import "./assets/styles/skills.scss";
+@import "./assets/styles/education.scss";
+
+
+
+@import './assets/dist/aos.css';
 
 // :root {
 
@@ -25,6 +30,8 @@
 //   --z-tooltip: 10;
 //   --z-fixed: 100;
 // }
+
+
 .color-yellow{
   color: #ffe600 !important;
 }

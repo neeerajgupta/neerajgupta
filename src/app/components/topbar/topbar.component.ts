@@ -14,6 +14,9 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 @Component({
     selector: 'app-topbar',
     standalone: true,
@@ -53,6 +56,10 @@ export class TopbarComponent implements OnInit {
     }
 
     ngOnInit() {
+
+         AOS.init({
+                duration: 1000, // Animation duration
+              });
         this.photeSrvicesces.photeSrvicescesData().subscribe(
             resp => {
                 console.log("Response from service:", resp.data);

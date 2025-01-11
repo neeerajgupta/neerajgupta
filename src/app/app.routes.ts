@@ -3,6 +3,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { EducationsComponent } from './components/educations/educations.component';
 
 export const routes: Routes = [
     { path: 'welcome', component: TopbarComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     // {path:"header", component:HeaderComponent},
     // {path:"sidebar", component:SidebarComponent}
     {path:"topbar", component:TopbarComponent},
-    {path:"skills", component:SkillsComponent}
+    {path:"skills", component:SkillsComponent},
+    {path:"education", component:EducationsComponent}
 ];

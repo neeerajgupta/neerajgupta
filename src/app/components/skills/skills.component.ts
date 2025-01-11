@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ButtonModule } from 'primeng/button';
 import { MessageService } from 'primeng/api';
+import { PhoteSrvicescesService } from '../../services/phote-srvicesces.service';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-skills',
@@ -11,7 +15,7 @@ import { MessageService } from 'primeng/api';
   imports: [FormsModule,CommonModule,ProgressBarModule,ButtonModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
-  providers:[MessageService]
+  providers:[MessageService,PhoteSrvicescesService]
 })
 export class SkillsComponent {
   value:any=0;
@@ -28,8 +32,17 @@ export class SkillsComponent {
 
   interval: any;
 
-  constructor(private messageService: MessageService, private ngZone: NgZone) {}
+  photos:any
+t: any;
+
+  constructor(private messageService: MessageService, private ngZone: NgZone,private photeSrvicesces:PhoteSrvicescesService) {}
+
+  
+
   ngOnInit() {
+    AOS.init({
+        duration: 1000, // Animation duration
+      });
     this.ngZone.runOutsideAngular(() => {
         this.interval = setInterval(() => {
             this.ngZone.run(() => {
@@ -52,6 +65,17 @@ export class SkillsComponent {
             });
         }, 400);
     });
+   
+    this.photeSrvicesces.photeSrvicescesData().subscribe(
+        resp => {
+            console.log("Response from service:", resp.data);
+            this.photos = Array.isArray(resp.data) ? resp.data : [];
+        },
+        error => {
+            console.error("Error fetching photos:", error);
+            this.photos = []; // Handle error gracefully
+        }
+    );
 }
 
 ngOnDestroy() {
@@ -60,5 +84,11 @@ ngOnDestroy() {
     }
 }
 
+
+isPaused = false;
+
+toggleAnimation() {
+  this.isPaused = !this.isPaused;
+}
 
 }

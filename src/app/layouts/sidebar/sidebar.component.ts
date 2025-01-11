@@ -34,12 +34,21 @@ export class SidebarComponent {
       },
       {
         label: 'Skills',
-        icon: 'pi pi-graduation-cap',
+        icon: 'pi pi-desktop',
         routerLink: '/skills',
         routerLinkActiveOptions: { exact: true },
         command: () => this.smoothScrollTo('skills') 
 
       },
+      {
+        label: 'Educations',
+        icon: 'pi pi-graduation-cap',
+        routerLink: '/education',
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('education') 
+
+      },
+
       {
         label: 'Projects',
         icon: 'pi pi-search',

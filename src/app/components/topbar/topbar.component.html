@@ -1,4 +1,4 @@
-<div class="dashbordView">
+<div class="dashbordView" >
 
     <!-- https://codepen.io/cltpcxsd-the-sasster/pen/zYawgzP -->
     <p-carousel [value]="photos" [numVisible]="3" [numScroll]="3" [circular]="false"
@@ -20,7 +20,7 @@
     </p-carousel>
 
 
-    <div class="dashbordAbout">
+    <div class="dashbordAbout" data-aos="fade-down">
         <div>
             <h1>Hi There,</h1>
             <h1 class="p-ml-3">I'm <strong>Neeraj Gupta</strong></h1>
@@ -32,14 +32,14 @@
 
         </div>
     </div>
-    <div class=" p-jc-center p-text-center  messages">
+    <div class=" p-jc-center p-text-center  messages"  data-aos="fade-down">
         <h1 class="p-m-0">Get in Touch</h1>
         <div class="messagesInfo">
           
            <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
             <div class="  ">
 
-                <div class="p-mt-5">
+                <div class="p-mt-5" data-aos="fade-down">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-user" />
                         <input type="text" pInputText placeholder="Name" formControlName="name" />
@@ -47,7 +47,7 @@
 
                 </div>
 
-                <div class="p-mt-5">
+                <div class="p-mt-5" data-aos="fade-down">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-envelope" />
                         <input type="mail" pInputText placeholder="Email" formControlName="email" />
@@ -55,25 +55,27 @@
                 </div>
 
 
-                <div class="p-mt-5">
+                <div class="p-mt-5" data-aos="fade-down">
                     <p-iconField class="p-mt-5" iconPosition="left">
                         <p-inputIcon styleClass="pi pi-phone" />
                         <input type="number" pInputText placeholder="Phone" formControlName="phone" />
                     </p-iconField>
                 </div>
-                <div class="p-mt-5 textarea">
+                <div class="p-mt-5 textarea" data-aos="zoom-in-down">
                     <span class="pi pi-comment" >
                        
                         <textarea  rows="5" cols="70" pInputTextarea formControlName="msg"></textarea>
                     </span>
                 </div>
 
-
-                <p-button styleClass="p-mt-3" icon="pi pi-send" type="submit" label="Submit" [raised]="true" severity="secondary" />
+<div data-aos="zoom-in-down" >
+    <p-button styleClass="p-mt-3" icon="pi pi-send" type="submit" label="Submit" [raised]="true" severity="secondary" />
+</div>
+               
             </div>
            </form>
 
-            <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="">
+            <img src="../../../assets/IMAGE/girl-with-laptop.png" alt="" data-aos="zoom-out-down">
 
         </div>
     </div>

@@ -1,0 +1,109 @@
+.education {
+    border: 1px solid rgb(180, 180, 180);
+    background-image: url('../IMAGE/hills.svg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: 101%;
+    background-position: bottom;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
+    flex-wrap: wrap;
+    width: calc(100vw - 140px);
+
+    .educationheader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >h1 {
+            margin-bottom: 14px;
+            font-weight: 800;
+            color: rgb(34, 16, 124);
+
+            i {
+                transform: scale(1.8);
+                margin-right: 10px;
+
+            }
+        }
+
+        .qoute {
+            color: #0c0c0c;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        >p {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            color: #363636;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+    }
+
+
+    .education-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+       
+
+        .educationBox {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            &:hover {
+                filter: grayscale(30);
+                transition-duration: 2s;
+                box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.1607843137);
+                transform: scale3d(1.05, 1.06, 5.01);
+            }
+            .image {
+                height: 150px;
+                width: 200px;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+            }
+
+            .content {
+                padding: 20px 20px 0px 20px;
+                background: white;
+                background-image: url('../IMAGE/hills.svg');
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: 100%;
+                width: 100%;
+
+                >h3 {
+                    font-weight: 800;
+                    color: rgb(34, 16, 124);
+                }
+
+                p {
+                    font-weight: 600;
+                    color: #242424;
+                }
+
+                h4 {
+                    font-weight: 600;
+                    color: #0d9619;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+    }
+}

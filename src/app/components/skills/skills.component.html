@@ -1,10 +1,10 @@
 <div class="skills">
 
-    <div class="skills-contats">
+    <div class="skills-contats" data-aos="zoom-out">
         <h2>My Skills</h2>
 
 
-        <div class="p-d-flex">
+        <div class="p-d-flex" data-aos="fade-down">
 
             <div class="p-col-6 p-p-0">
                 <div class="p-pr-4 p-pt-0">
@@ -123,7 +123,7 @@
     </div>
 </div>
 
-<div class="skills-Abilities">
+<div class="skills-Abilities" data-aos="fade-down">
     <h1 class="color-white p-m-0">Skills & <span class="color-yellow">Abilities</span></h1>
 
 
@@ -152,7 +152,7 @@
             </div>
             <h2>AWS</h2>
         </div>
-       
+
         <div class="skills-atContant">
             <div class="skillsLogo">
                 <img src="../../../assets/SkillsImage/primeng.png" alt="">
@@ -189,5 +189,34 @@
             </div>
             <h2>Spring Boot</h2>
         </div>
+    </div>
+</div>
+
+
+
+<div class="p-d-flex p-ai-center p-jc-center p-text-center p-mt-5" data-aos="fade-down">
+    <h1 class="color-white p-m-0">Tour & <span class="color-yellow">City</span></h1>
+</div>
+
+<div id="container" data-aos="fade-down">
+    
+    <div class="photobanner" [ngClass]="{'paused': isPaused}" (mouseenter)="toggleAnimation()"
+        (mouseleave)="toggleAnimation()">
+        @for( data of photos; track t){
+        <div class="divCard ">
+            <!-- <img [src]="data.image" alt=""> -->
+
+
+            <figure class="imgHover p-m-0">
+                <img [src]="data.image" alt="" />
+                <figcaption>
+                  <div ><strong>Tour City :</strong> <h3>{{data.tourcity}}</h3></div>
+
+                  <div ><strong>Name :</strong> <h3>{{data.name.first}} {{data.name.last}}</h3></div>
+                  <div ><strong>Mail :</strong> <h3> {{data.name.email}}</h3></div>
+                </figcaption>
+            </figure>
+        </div>
+        }
     </div>
 </div>

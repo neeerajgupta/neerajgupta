@@ -11,7 +11,7 @@
     background-position: center;
     position: relative;
     overflow: hidden;
-    height: 30%;
+    height: 20%;
 
     @media screen and (max-width: 600px) {
         height: 40%;
@@ -131,27 +131,32 @@
         background-position: 66% 100%;
         background-repeat: no-repeat;
         transition-duration: 3s;
-        .skillsLogo{
+
+        .skillsLogo {
             height: 120px;
             width: 100%;
             object-fit: contain;
             margin-bottom: 20px;
         }
-        img{
-          
+
+        img {
+
             height: 100%;
             width: 100%;
             border-radius: 12px 12px 0px 0px;
         }
-        h2{
+
+        h2 {
             margin: 0px;
             text-align: center;
         }
 
-        &:hover{
-            filter: grayscale(1.5);
-            transform: rotate(4deg);
-            transition-duration: 3s;
+        &:hover {
+            filter: grayscale(50);
+            // transform: rotate(4deg);
+            transition-duration: 2s;
+            box-shadow: 2px 4px 16px #00000029;
+            transform: scale3d(1.05, 1.06, 5.01);
         }
     }
 
@@ -160,4 +165,115 @@
     }
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+// 
+#container {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.photobanner {
+    position: absolute;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: bannermove 10s linear infinite;
+
+    &.paused {
+        animation: none;
+    }
+
+    .divCard {
+        height: 300px;
+        width: 300px;
+        border: 1px solid #e7e7e7;
+        border-radius: 8px;
+        margin-right: 20px;
+        position: relative;
+        overflow: hidden;
+
+
+        figure.imgHover * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.6s ease;
+            transition: all 0.6s ease;
+        }
+
+        figure.imgHover img {
+            opacity: 1;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            -webkit-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+
+        figure.imgHover figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+            -webkit-transform-origin: 50% -50%;
+            -ms-transform-origin: 50% -50%;
+            transform-origin: 50% -50%;
+            z-index: 1;
+            opacity: 0;
+            padding: 20px 30px;
+
+        }
+
+        figure.imgHover:hover img,
+        figure.imgHover.hover img {
+            -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
+
+        figure.imgHover:hover figcaption,
+        figure.imgHover.hover figcaption {
+            -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            opacity: 1;
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+            background: #887e7e;
+            height: 100%;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    }
+}
+
+
+@keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-44%, 0);
+    }
 }
