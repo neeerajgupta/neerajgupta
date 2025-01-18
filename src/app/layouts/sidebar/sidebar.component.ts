@@ -59,8 +59,21 @@ export class SidebarComponent {
 
       {
         label: 'Projects',
-        icon: 'pi pi-search',
-        routerLink: '/tour',
+        icon: 'pi pi-receipt',
+        routerLink: '/project',
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('project') 
+
+
+      },
+
+      {
+        label: 'Footer',
+        icon: 'pi pi-receipt',
+        routerLink: '/footer',
+        routerLinkActiveOptions: { exact: true },
+        command: () => this.smoothScrollTo('footer') 
+
 
       }
     ]

@@ -1,0 +1,140 @@
+
+
+#project {
+    background: linear-gradient(170deg,#f7f8fc, #171a4b );
+    .project-header {
+
+        >h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    .projectContant {
+        position: relative;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        .projectDatils {
+            position: sticky;
+            top: 80px;
+            width: 60%;
+            height: 400px;
+            background: #f7f8fc;
+            border-radius: 12px;
+            box-shadow: 0 0.125rem 0.5rem 0 rgb(47 43 61 / 35%);
+            transition: 2s;
+            // &:hover {
+            //     filter: grayscale(50);
+            //     transition-duration: 2s;
+            //     box-shadow: 2px 4px 16px #00000029;
+            //     transform: scale3d(1.0, 1.01, 0.3);
+            // }
+
+
+            .projectview {
+                height: 275px;
+                background-color: #f7f8fc;
+
+                .contsnt{
+                    display: flex;
+                    height: 250px;
+                    padding: 10px;
+                    border: 1px solid transparent;
+                    border-radius: 12px;
+                    img{
+                        border: 1px solid transparent;
+                        border-radius: 12px;
+                    }
+                }
+                .p-button {
+                    transition: 2s;
+                    height: 36px;
+                    img{
+                        transform: scale(0.5);
+                    }
+                    a {
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+
+                    &:hover {
+                        filter: grayscale(50);
+                        transition-duration: 2s;
+                        box-shadow: 2px 4px 16px #00000029;
+                        transform: scale3d(1.05, 1.06, 5.01);
+
+                        a{
+                            transition-duration: 1s;
+                            margin-left: 4px;
+                        }
+
+
+                      
+                    }
+                }
+
+            }
+
+            &:nth-child(1) {
+                top: 80px;
+                background-size: cover;
+                margin-bottom: 20px;
+              
+            }
+
+            &:nth-child(2) {
+                top: 140px;
+                background-size: cover;
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(3) {
+                top: 200px;
+                background-size: cover;
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(4) {
+                top: 260px;
+                background-size: cover;
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(5) {
+                top: 300px;
+                background-size: cover;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
+ 
+
+
+}

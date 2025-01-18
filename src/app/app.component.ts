@@ -8,12 +8,14 @@ import { SkillsComponent } from "./components/skills/skills.component";
 import { ButtonModule } from 'primeng/button';
 import { EducationsComponent } from "./components/educations/educations.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
+import { ProjectsComponent } from "./components/projects/projects.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent, ExperienceComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent, ExperienceComponent, ProjectsComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

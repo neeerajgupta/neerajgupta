@@ -4,6 +4,10 @@
 @import "./assets/styles/skills.scss";
 @import "./assets/styles/education.scss";
 @import "./assets/styles/experience.scss";
+@import "./assets/styles/project.scss";
+@import "./assets/styles/footer.scss";
+
+
 
 
 
@@ -33,20 +37,27 @@
 // }
 
 
-.color-yellow{
+.color-yellow {
   color: #ffe600 !important;
 }
 
-.color-whitw{
+.color-whitw {
   color: #ffffff !important;
 }
-.color-black{
+
+.color-black {
   color: #0c0c0c !important;
 }
 
+.color-blue {
+  color: #22107c;
+}
+
 #tawkChat {
-  left: 20px !important; /* Adjust the left position */
-  right: auto !important; /* Ensure it doesn't move to the right */
+  left: 20px !important;
+  /* Adjust the left position */
+  right: auto !important;
+  /* Ensure it doesn't move to the right */
 }
 
 
@@ -159,8 +170,3 @@ body {
 
 }
 
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}

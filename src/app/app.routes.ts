@@ -5,6 +5,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { EducationsComponent } from './components/educations/educations.component';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 export const routes: Routes = [
     { path: 'welcome', component: TopbarComponent },
@@ -15,5 +17,9 @@ export const routes: Routes = [
     {path:"topbar", component:TopbarComponent},
     {path:"skills", component:SkillsComponent},
     {path:"education", component:EducationsComponent},
-    {path:"experience", component:ExperienceComponent}
+    {path:"experience", component:ExperienceComponent},
+    {path:"project", component:ProjectsComponent},
+    {path:"footer", component:FooterComponent}
+
+
 ];
