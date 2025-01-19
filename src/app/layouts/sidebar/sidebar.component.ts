@@ -69,7 +69,7 @@ export class SidebarComponent {
 
       {
         label: 'Footer',
-        icon: 'pi pi-receipt',
+        icon: 'pi pi-verified',
         routerLink: '/footer',
         routerLinkActiveOptions: { exact: true },
         command: () => this.smoothScrollTo('footer') 

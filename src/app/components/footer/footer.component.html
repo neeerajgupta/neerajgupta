@@ -9,6 +9,31 @@
     </div>
     <div class="p-col-4">
       <h1>Quick Links</h1>
+      <ul>
+        <li> <a href="https://www.linkedin.com/in/neeraj-gupta-9ab41a26a">
+          <p-avatar href="/" class="p-mr-2" icon="pi pi-linkedin" shape="circle" />
+
+      </a>
+      <a href="https://github.com/neeerajgupta" target="_blank" rel="noopener noreferrer">
+          
+          <p-avatar class="p-mr-2" icon="pi pi-github" shape="circle"></p-avatar>
+          
+  </a>
+      <a (click)="showDialog()"> <p-avatar href="/" class="p-mr-2" icon="pi pi-whatsapp" shape="circle" />
+
+      </a> 
+      <a href="https://www.instagram.com/lovepreetgupta.k/">
+
+          <p-avatar href="/" class="p-mr-2" icon="pi pi-instagram" shape="circle" />
+
+      </a> 
+      
+     
+       <a href="https://neeerajgupta.github.io/OurWebsit_Portfolio/">
+          <p-avatar href="/" class="p-mr-2" icon="pi pi-external-link" shape="circle" />
+      </a>
+      </li>
+      </ul>
     </div>
     <div class="p-col-4">
       <h1>Contact Info</h1>
@@ -25,3 +50,17 @@
   <h3 class="p-d-flex p-jc-center">Designed by Neeraj Gupta</h3>
 
 </section>
+
+
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+  <ng-template pTemplate="header">
+    <h5  class="color-blue">
+      Neeraj Gupta
+    </h5>
+</ng-template>
+
+<div>
+  <img src="../../../assets/IMAGE/whatapp.jpg" alt="" height="100%" width="100%">
+ </div>
+  
+</p-dialog>

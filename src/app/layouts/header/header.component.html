@@ -19,7 +19,7 @@
                     <p-avatar class="p-mr-2" icon="pi pi-github" shape="circle"></p-avatar>
                     
             </a>
-                <a href="/"> <p-avatar href="/" class="p-mr-2" icon="pi pi-whatsapp" shape="circle" />
+                <a (click)="showDialog()"> <p-avatar href="/" class="p-mr-2" icon="pi pi-whatsapp" shape="circle" />
 
                 </a> 
                 <a href="https://www.instagram.com/lovepreetgupta.k/">
@@ -41,3 +41,17 @@
     </p-menubar>
 
 </div>
+
+
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <ng-template pTemplate="header">
+      <h5  class="color-blue">
+        Neeraj Gupta
+      </h5>
+  </ng-template>
+  
+  <div>
+    <img src="../../../assets/IMAGE/whatapp.jpg" alt="" height="100%" width="100%">
+   </div>
+    
+  </p-dialog>
