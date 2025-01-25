@@ -7,6 +7,7 @@ import { EducationsComponent } from './components/educations/educations.componen
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TourComponent } from './components/tour/tour.component';
 
 export const routes: Routes = [
     { path: 'welcome', component: TopbarComponent },
@@ -19,7 +20,9 @@ export const routes: Routes = [
     {path:"education", component:EducationsComponent},
     {path:"experience", component:ExperienceComponent},
     {path:"project", component:ProjectsComponent},
-    {path:"footer", component:FooterComponent}
+    {path:"footer", component:FooterComponent},
+    {path:"tour", component:TourComponent}
+
 
 
 ];

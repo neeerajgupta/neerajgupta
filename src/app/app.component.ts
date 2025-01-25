@@ -10,12 +10,13 @@ import { EducationsComponent } from "./components/educations/educations.componen
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { TourComponent } from "./components/tour/tour.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent, ExperienceComponent, ProjectsComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, TopbarComponent, SkillsComponent, ButtonModule, EducationsComponent, ExperienceComponent, ProjectsComponent, FooterComponent, TourComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
