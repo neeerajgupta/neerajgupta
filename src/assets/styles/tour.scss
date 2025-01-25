@@ -10,6 +10,7 @@
   box-shadow: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.35);
   width: 98%;
   text-align: center;
+  margin-bottom: 20px;
 
   .flip-book {
     box-shadow: 0 0 20px 0 rgba(107, 107, 107, 0.5);
@@ -17,6 +18,12 @@
     background-size: cover;
     margin-left: 7%;
     border-radius: 6px;
+
+    @media screen and (max-width: 1199px) {
+
+      margin-left: 0;
+
+    }
   }
 
   .page {
@@ -25,7 +32,7 @@
     background-color: #ffffffdc;
     color: rgb(35, 35, 35);
     border: 1px solid #9c8667;
-
+    cursor:grab;
     overflow: hidden;
 
     .page-content {
@@ -36,17 +43,18 @@
       align-items: stretch;
       transition-duration: 3s;
 
-      .headerNAme{
+      .headerNAme {
         font-size: 18px;
         font-weight: 600;
         margin-top: 6px;
-        span{
+
+        span {
           font-size: 14px;
           font-weight: bold;
         }
       }
 
-      .img{
+      .img {
         height: 200px;
         width: 100%;
         border-radius: 6px;
@@ -59,10 +67,10 @@
           width: 100%;
           object-fit: contain;
           border-radius: 6px;
-  
+
         }
       }
-     
+
 
       .page-header {
         height: 30px;
@@ -72,7 +80,7 @@
         text-align: center;
       }
 
-     
+
 
       .pageSummery {
         height: 100%;
@@ -83,7 +91,8 @@
         padding-top: 10px;
         box-sizing: border-box;
         border-top: solid 1px rgb(35, 55, 90);
-        span{
+
+        span {
           font-size: 14px;
           font-weight: 600;
         }
@@ -97,7 +106,7 @@
       }
 
       &:hover {
-        img {
+        .img {
           filter: grayscale(50);
           // transform: rotate(4deg);
           transition-duration: 2s;
@@ -143,7 +152,7 @@
         font-size: 24px;
       }
 
-     
+
 
       &.page-cover-top {
         box-shadow: inset 0px 0 30px 0px rgba(36, 10, 3, 0.5), -2px 0 5px 2px rgba(0, 0, 0, 0.4);

@@ -11,10 +11,10 @@
     background-position: center;
     position: relative;
     overflow: hidden;
-    height: 20%;
+    height: auto;
 
     @media screen and (max-width: 600px) {
-        height: 20%;
+        height: auto;
         width: 96%;
 
     }
