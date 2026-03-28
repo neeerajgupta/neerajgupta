@@ -7,7 +7,7 @@ export class apServices {
   constructor(public http: HttpClient) { }
 
   saveData(data:any){
-    return this.http.post('/adduser',data);
+    return this.http.post('/adduser', data, { responseType: 'text' });
   }
 
   getData(){

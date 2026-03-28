@@ -144,18 +144,21 @@ export class TopbarComponent implements OnInit {
             const formData = this.myForm.value;
             console.log('Form submitted:', formData);
             const payload = {
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                msg: formData.msg
+                "name": formData.name,
+                "email": formData.email,
+                "phone": formData.phone,
+                "msg": formData.msg
             }
 
             this.apiservice.saveData(payload)
-                .subscribe(response => {
-                    this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
-                }, error => {
-                   this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
-
+                .subscribe({
+                    next: (response) => {
+                        this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
+                    },
+                    error: (error) => {
+                        this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Failed to save data' });
+                        console.log(error);
+                    }
                 });
         }
     }

@@ -1,17 +1,18 @@
 <p-toast></p-toast>
 
-<div>
-<p-table [value]="userlist" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template #header>
+<p-table [value]="userlist" >
+    <ng-template pTemplate="header">
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Mobile No</th>
             <th>Message</th>
         </tr>
     </ng-template>
-    <ng-template #body let-product>
+    <ng-template pTemplate="body" let-product>
         <tr>
+            <td>{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.email }}</td>
             <td>{{ product.phone }}</td>
@@ -19,4 +20,4 @@
         </tr>
     </ng-template>
 </p-table>
-</div>
+
