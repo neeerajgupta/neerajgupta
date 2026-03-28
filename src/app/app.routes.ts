@@ -8,6 +8,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TourComponent } from './components/tour/tour.component';
+import { UserlistComponent } from './components/userlist/userlist.component';
 
 export const routes: Routes = [
     { path: 'welcome', component: TopbarComponent },
@@ -21,7 +22,8 @@ export const routes: Routes = [
     {path:"experience", component:ExperienceComponent},
     {path:"project", component:ProjectsComponent},
     {path:"footer", component:FooterComponent},
-    {path:"tour", component:TourComponent}
+    {path:"tour", component:TourComponent},
+     {path:"userlist", component:UserlistComponent}
 
 
 

@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="dashbordView" >
 
     <!-- https://codepen.io/cltpcxsd-the-sasster/pen/zYawgzP -->
@@ -69,7 +70,11 @@
                 </div>
 
 <div data-aos="zoom-in-down" >
-    <p-button styleClass="p-mt-3" icon="pi pi-send" type="submit" label="Submit" [raised]="true" severity="secondary" />
+   <div class="p-d-flex p-mx-2">
+     <p-button styleClass="p-mt-3 P-mx-3" icon="pi pi-send" type="submit" label="Submit" [raised]="true" severity="secondary" />
+
+     <p-button styleClass="p-mt-3 p-mx-3" icon="pi pi-send"  (onClick)="viewUserList()" label="List" [raised]="true" severity="help" />
+   </div>
 </div>
                
             </div>

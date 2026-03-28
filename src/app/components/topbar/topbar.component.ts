@@ -16,28 +16,32 @@ import { ButtonModule } from 'primeng/button';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { MessageService } from 'primeng/api';
+import { apServices } from '../../services/apServices.service';
+import { ToastModule } from 'primeng/toast';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { UserlistComponent } from '../userlist/userlist.component';
 @Component({
     selector: 'app-topbar',
     standalone: true,
-    imports: [CarouselModule, CommonModule, FormsModule, HttpClientModule, TagModule,TooltipModule, InputTextModule,InputIconModule,IconFieldModule,FloatLabelModule,InputTextareaModule,ButtonModule, ReactiveFormsModule],
+    imports: [CarouselModule, CommonModule, FormsModule, HttpClientModule, TagModule, TooltipModule, InputTextModule, InputIconModule, IconFieldModule, FloatLabelModule, InputTextareaModule, ButtonModule, ReactiveFormsModule, ToastModule, UserlistComponent],
     templateUrl: './topbar.component.html',
     styleUrl: './topbar.component.scss',
-    providers: [PhoteSrvicescesService]
+    providers: [PhoteSrvicescesService, MessageService, DialogService, apServices]
 })
 export class TopbarComponent implements OnInit {
     photos: any | undefined;
-   
+
 
     responsiveOptions: any[] | undefined;
 
 
-   
 
 
 
 
-    private strings: string[] = ["Ui Developer", "Full Stack Developer", "Graphics Designer", "Web Designer", "Web Developer","Animation Developer"];
+
+    private strings: string[] = ["Ui Developer", "Full Stack Developer", "Graphics Designer", "Web Designer", "Web Developer", "Animation Developer"];
     private currentIndex: number = 0;
     private currentString: string = '';
     private typingSpeed: number = 100;
@@ -46,20 +50,20 @@ export class TopbarComponent implements OnInit {
 
 
     myForm: FormGroup;
-    constructor(private photeSrvicesces: PhoteSrvicescesService,private fb: FormBuilder, private http:HttpClient) { 
+    constructor(public dialogService: DialogService, private messageservice: MessageService, private apiservice: apServices, private photeSrvicesces: PhoteSrvicescesService, private fb: FormBuilder, private http: HttpClient) {
         this.myForm = this.fb.group({
             name: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             phone: ['', Validators.required],
             msg: [''],
-          });
+        });
     }
 
     ngOnInit() {
 
-         AOS.init({
-                duration: 1000, // Animation duration
-              });
+        AOS.init({
+            duration: 1000, // Animation duration
+        });
         this.photeSrvicesces.photeSrvicescesData().subscribe(
             resp => {
                 console.log("Response from service:", resp.data);
@@ -107,47 +111,62 @@ export class TopbarComponent implements OnInit {
 
     private type(): void {
         const fullString = this.strings[this.currentIndex];
-    
+
         if (this.isDeleting) {
-          this.currentString = fullString.substring(0, this.currentString.length - 1);
+            this.currentString = fullString.substring(0, this.currentString.length - 1);
         } else {
-          this.currentString = fullString.substring(0, this.currentString.length + 1);
+            this.currentString = fullString.substring(0, this.currentString.length + 1);
         }
-    
+
         const displayElement = document.querySelector('.position') as HTMLElement;
         if (displayElement) {
-          displayElement.textContent = this.currentString;
+            displayElement.textContent = this.currentString;
         }
-    
+
         // Determine typing speed
         let speed = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
-    
+
         // If the full string is typed, start deleting after a pause
         if (!this.isDeleting && this.currentString === fullString) {
-          speed = 1000; // Pause before starting to delete
-          this.isDeleting = true;
+            speed = 1000; // Pause before starting to delete
+            this.isDeleting = true;
         } else if (this.isDeleting && this.currentString === '') {
-          this.isDeleting = false;
-          this.currentIndex = (this.currentIndex + 1) % this.strings.length; 
+            this.isDeleting = false;
+            this.currentIndex = (this.currentIndex + 1) % this.strings.length;
         }
-    
+
         setTimeout(() => this.type(), speed);
-      }
+    }
 
 
-      onSubmit() {
+    onSubmit() {
         if (this.myForm.valid) {
-          const formData = this.myForm.value;
-          console.log('Form submitted:', formData);
-          
-          // Send to the server
-          this.http.post('https://github.com/neeerajgupta/image/blob/main/Data.json', formData)
-              .subscribe(response => {
-                  console.log('Data saved successfully', response);
-              }, error => {
-                  console.error('Error saving data', error);
-              });
+            const formData = this.myForm.value;
+            console.log('Form submitted:', formData);
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                msg: formData.msg
+            }
+
+            this.apiservice.saveData(payload)
+                .subscribe(response => {
+                    this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
+                }, error => {
+                   this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
+
+                });
         }
-      }
+    }
+    ref: DynamicDialogRef | undefined;
+    viewUserList() {
+        this.ref = this.dialogService.open(UserlistComponent, {
+            header: 'USER LIST',
+            width: '50vw',
+            modal: true,
+            
+        });
+    }
 
 }
