@@ -13,9 +13,6 @@ import { UserlistComponent } from './components/userlist/userlist.component';
 export const routes: Routes = [
     { path: 'welcome', component: TopbarComponent },
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-    // { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
-    // {path:"header", component:HeaderComponent},
-    // {path:"sidebar", component:SidebarComponent}
     {path:"topbar", component:TopbarComponent},
     {path:"skills", component:SkillsComponent},
     {path:"education", component:EducationsComponent},
@@ -23,8 +20,5 @@ export const routes: Routes = [
     {path:"project", component:ProjectsComponent},
     {path:"footer", component:FooterComponent},
     {path:"tour", component:TourComponent},
-     {path:"userlist", component:UserlistComponent}
-
-
-
+    {path:"userlist", component:UserlistComponent}
 ];

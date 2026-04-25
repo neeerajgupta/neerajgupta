@@ -166,7 +166,7 @@ export class TopbarComponent implements OnInit {
     viewUserList() {
         this.ref = this.dialogService.open(UserlistComponent, {
             header: 'USER LIST',
-            width: '50vw',
+            width: '60vw',
             modal: true,
             
         });

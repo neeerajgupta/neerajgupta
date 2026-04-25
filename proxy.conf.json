@@ -8,5 +8,15 @@
     "target": "http://localhost:8080",
     "secure": false,
     "changeOrigin": true
+  },
+    "/deleteuser": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true
+  },
+    "/edituser": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "changeOrigin": true
   }
 }

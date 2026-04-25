@@ -176,3 +176,23 @@ body {
   z-index: 999999 !important;
 }
 
+.radiusbtn{
+  width: auto;
+  padding: 7px !important;
+  border-radius: 100%;
+}
+.p-datatable .p-datatable-tbody > tr{
+  height: 26px;
+ .radiusbtn{
+    display: none;
+  }
+&:hover{
+  .radiusbtn{
+    display: inline-flex;
+    height: 24px;
+    width: 24px;
+  }
+}
+}
+
+
