@@ -15,7 +15,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';
 import { MessageService } from 'primeng/api';
 import { apServices } from '../../services/apServices.service';
 import { ToastModule } from 'primeng/toast';
@@ -142,24 +142,32 @@ export class TopbarComponent implements OnInit {
     onSubmit() {
         if (this.myForm.valid) {
             const formData = this.myForm.value;
-            console.log('Form submitted:', formData);
             const payload = {
-                "name": formData.name,
-                "email": formData.email,
-                "phone": formData.phone,
-                "msg": formData.msg
-            }
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                msg: formData.msg
+            };
 
-            this.apiservice.saveData(payload)
-                .subscribe({
-                    next: (response) => {
-                        this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Data saved successfully' });
-                    },
-                    error: (error) => {
-                        this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Failed to save data' });
-                        console.log(error);
-                    }
-                });
+            const recipient = 'soft.guptaneeraj@gmail.com';
+            const subject = 'corp';
+            const body = `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\nMessage: ${payload.msg}\n\n\n\n\n\n\n  Best Regards,\n${payload.name}`;
+            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            this.messageservice.add({ severity: 'success', summary: 'Ready', detail: 'Email client opened' });
+
+            // If you have a backend API that sends email automatically, call that instead:
+            // this.apiservice.saveData(payload).subscribe({
+            //     next: (response) => {
+            //         this.messageservice.add({ severity: 'success', summary: 'Success', detail: 'Mail sent successfully' });
+            //     },
+            //     error: (error) => {
+            //         this.messageservice.add({ severity: 'error', summary: 'Error', detail: 'Failed to send mail' });
+            //         console.error(error);
+            //     }
+            // });
+        } else {
+            this.messageservice.add({ severity: 'warn', summary: 'Invalid', detail: 'Please fill all required fields' });
         }
     }
     ref: DynamicDialogRef | undefined;
