@@ -50,6 +50,9 @@ export class TopbarComponent implements OnInit {
 
 
     myForm: FormGroup;
+    sentMails: any[] = [];
+    private localStorageKey = 'sentMailList';
+
     constructor(public dialogService: DialogService, private messageservice: MessageService, private apiservice: apServices, private photeSrvicesces: PhoteSrvicescesService, private fb: FormBuilder, private http: HttpClient) {
         this.myForm = this.fb.group({
             name: ['', Validators.required],
@@ -60,6 +63,7 @@ export class TopbarComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.loadSentMails();
 
         AOS.init({
             duration: 1000, // Animation duration
@@ -138,20 +142,39 @@ export class TopbarComponent implements OnInit {
         setTimeout(() => this.type(), speed);
     }
 
+    private loadSentMails(): void {
+        const stored = localStorage.getItem(this.localStorageKey);
+        if (stored) {
+            try {
+                this.sentMails = JSON.parse(stored);
+            } catch (error) {
+                console.error('Failed to parse sent mail list from localStorage', error);
+                this.sentMails = [];
+            }
+        }
+    }
+
+    private saveSentMails(): void {
+        localStorage.setItem(this.localStorageKey, JSON.stringify(this.sentMails));
+    }
 
     onSubmit() {
         if (this.myForm.valid) {
             const formData = this.myForm.value;
             const payload = {
+                id: Date.now(),
                 name: formData.name,
                 email: formData.email,
                 phone: formData.phone,
                 msg: formData.msg
             };
 
+            this.sentMails.unshift(payload);
+            this.saveSentMails();
+
             const recipient = 'soft.guptaneeraj@gmail.com';
             const subject = 'corp';
-            const body = `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\nMessage: ${payload.msg}\n\n\n\n\n\n\n  Best Regards,\n${payload.name}`;
+            const body = `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\nMessage: ${payload.msg}\n\n\n\n\n\n\nBest Regards,\n${payload.name}`;
             window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             this.messageservice.add({ severity: 'success', summary: 'Ready', detail: 'Email client opened' });

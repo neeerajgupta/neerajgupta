@@ -1,5 +1,3 @@
-import { HttpClientModule } from '@angular/common/http';
-import { apServices } from '../../services/apServices.service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
@@ -12,12 +10,13 @@ import { DialogModule } from 'primeng/dialog';
 @Component({
   selector: 'app-userlist',
   standalone: true,
-  imports: [ToastModule,DialogModule,TableModule,ButtonModule, HttpClientModule,CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [ToastModule, DialogModule, TableModule, ButtonModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './userlist.component.html',
-  providers: [apServices,MessageService]
+  providers: [MessageService]
 })
 export class UserlistComponent implements OnInit {
-  userlist:any[]=[];
+  userlist:any[] = [];
+  private localStorageKey = 'sentMailList';
 
   editForm = this.fb.group({
     name:[''],
@@ -25,80 +24,68 @@ export class UserlistComponent implements OnInit {
     phone:[''],
     msg:['']
   })
-  constructor(private fb: FormBuilder, private apiservice: apServices, private messageservice: MessageService) { }
+  constructor(private fb: FormBuilder, private messageservice: MessageService) { }
 
   ngOnInit(): void {
-    this.getuserData()
+    this.loadUserList();
   }
-  getuserData(){
-    this.apiservice.getData().subscribe({
-      next:(res)=>{
-        const responseData = res as any; 
-        this.userlist = responseData; 
-        this.messageservice.add({severity:'success', summary: 'Success', detail: 'Data fetched successfully',life:2000});
-      },
-      error:(err)=>{
-        this.messageservice.add({severity:'error', summary: 'Error', detail: 'Failed to fetch data',life:2000});
-        console.log(err);
+
+  private loadUserList(): void {
+    const stored = localStorage.getItem(this.localStorageKey);
+    if (stored) {
+      try {
+        this.userlist = JSON.parse(stored);
+        this.messageservice.add({severity:'success', summary: 'Success', detail: 'Local list loaded', life:2000});
+      } catch (error) {
+        console.error('Failed to parse local sent mail list', error);
+        this.userlist = [];
       }
-    })
+    }
+  }
+
+  private updateUserListStorage(): void {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.userlist));
   }
 
   visible:boolean=false;
-  userid:any=0;
+  userid:any = 0;
   deleteUser(id: any){
-   this.visible=true;
-   this.userid=id
+    this.visible = true;
+    this.userid = id;
   }
+
   deleteUserpop(){
-    this.apiservice.deleteData(this.userid).subscribe({
-      next:(res)=>{
-        this.messageservice.add({severity:'success', summary: 'Success', detail: `${res}  successfully`,life:2000});
-        this.getuserData();
-      },
-      error:(err)=>{
-        this.messageservice.add({severity:'error', summary: 'Error', detail: 'Failed to delete data',life:2000});
-        console.log(err);
-      }
-    })
-    this.visible=false;
-
+    this.userlist = this.userlist.filter(item => item.id !== this.userid);
+    this.updateUserListStorage();
+    this.messageservice.add({severity:'success', summary: 'Success', detail: 'Entry deleted', life:2000});
+    this.visible = false;
   }
-
 
   editvisible:boolean=false;
   editUser(userdata: any){
-    this.editvisible=true;
-    this.userid=userdata.id;
+    this.editvisible = true;
+    this.userid = userdata.id;
     this.editForm.patchValue({
-      name:userdata.name,
-      email:userdata.email,
-      phone:userdata.phone,
-      msg:userdata.msg
+      name: userdata.name,
+      email: userdata.email,
+      phone: userdata.phone,
+      msg: userdata.msg
     })
-   }
+  }
 
+  saveEdit(){
+    const updated = {
+      id: this.userid,
+      name: this.editForm.value.name,
+      email: this.editForm.value.email,
+      phone: this.editForm.value.phone,
+      msg: this.editForm.value.msg
+    };
 
-   saveEdit(){
+    this.userlist = this.userlist.map(item => item.id === this.userid ? updated : item);
+    this.updateUserListStorage();
+    this.messageservice.add({severity:'success', summary: 'Success', detail: 'Entry updated', life:2000});
+    this.editvisible = false;
+  }
 
-    const payload = {
-      id:this.userid,
-      name:this.editForm.value.name,
-      email:this.editForm.value.email,
-      phone:this.editForm.value.phone,
-      msg:this.editForm.value.msg
-    }
-    this.apiservice.editApi(payload).subscribe({
-      next:(resp)=>{
-        this.messageservice.add({severity:'success', summary: 'Success', detail: `${resp}  successfully`,life:2000});
-
-      },error:(err)=>{
-        console.log(err);
-        this.messageservice.add({severity:'error', summary: 'Error', detail: 'Failed to edit data',life:2000});
-      }
-    })
-    this.editvisible=false;
-   }
-
-  
 }
