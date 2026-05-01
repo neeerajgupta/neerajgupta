@@ -19,8 +19,10 @@ export class ExperienceComponent implements OnInit {
     });
 
     this.events = [
-      { status: 'CRISIL Limited', date: '11/11/2023 ', icon: '../../../assets/IMAGE/experience-removebg-preview.png', image: 'crisil.png' },
-      { status: 'Comming Soon', date: '', icon: '../../../assets/IMAGE/commingsoon.jpeg',image: 'commingsoon.jpeg'},
+      { status: 'Russell Tobin', date: '11/11/2023 ', enddate:'31/03/2026', icon: '../../../assets/IMAGE/experience-removebg-preview.png', image: 'russelltobin.svg' },
+      { status: 'Quess Corp', date: '11/11/2023 ', enddate:'Present', icon: 'https://www.quesscorp.com/wp-content/uploads/2022/11/quessbluesvg.svg', image: 'quessbluesvg.svg' },
+      
+      { status: 'Comming Soon', date: '', enddate:'', icon: '../../../assets/IMAGE/commingsoon.jpeg',image: 'commingsoon.jpeg'},
   ];
   }
 }

@@ -31,22 +31,11 @@
 </p-table>
 
 
-<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-    <span class="p-text-secondary block mb-5">Update your information.</span>
-
-
-    <div class="p-d-flex p-mt-4 p-jc-end">
-        <p-button label="Cancel" icon="pi pi-times" (onClick)="visible = false"
-            styleClass="p-button-outlined  p-py-1 p-mx-3"></p-button>
-        <p-button label="Delete" icon="pi pi-trash" (onClick)="deleteUserpop()"
-            styleClass="p-button-outlined p-py-1 p-button-danger"></p-button>
-    </div>
-
-</p-dialog>
 
 
 
-<p-dialog header="Edit Profile" [modal]="true" [(visible)]="editvisible" [style]="{ width: '25rem' }">
+
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="editvisible" [style]="{ width: '60vw' }">
     <span class="p-text-secondary block p-mb-3">Update your information of this ID ({{ userid }}).</span>
 
 
